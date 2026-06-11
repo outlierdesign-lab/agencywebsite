@@ -11,14 +11,14 @@
   .hero { padding-top: clamp(120px, 17vw, 200px); padding-bottom: clamp(40px, 7vw, 84px); }
   .hero-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: clamp(28px, 4.5vw, 52px); }
   .hero-note { max-width: 340px; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
-  .hero h1 { max-width: 17ch; font-size: clamp(28px, 4.8vw, 52px); }
+  .hero h1 { max-width: 17ch; font-size: clamp(28px, 4.8vw, 52px); text-transform: uppercase; }
   .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: clamp(34px, 5vw, 56px); flex-wrap: wrap; }
 
   /* ---------- logos ---------- */
   .logos { padding-block: clamp(34px, 5vw, 56px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .logos .cap { text-align: center; color: var(--faint); font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 26px; }
   .logo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(22px, 5vw, 58px); }
-  .logo-row .lg { font-family: var(--pixel); font-weight: 500; font-size: clamp(15px, 2vw, 22px); color: var(--faint); text-transform: uppercase; letter-spacing: 0.01em; transition: color .3s; }
+  .logo-row .lg { font-family: var(--mono); font-weight: 500; font-size: clamp(15px, 2vw, 22px); color: var(--faint); text-transform: uppercase; letter-spacing: 0.01em; transition: color .3s; }
   .logo-row .lg:hover { color: var(--ink); }
 
   /* ---------- about ---------- */
@@ -26,7 +26,7 @@
   .about-grid { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: clamp(30px, 5vw, 72px); align-items: start; }
   .about-stmt { font-family: var(--mono); font-weight: 500; font-size: clamp(15px, 1.9vw, 20px); line-height: 1.5; color: var(--ink); max-width: 34ch; letter-spacing: -0.01em; }
   .about-stats { display: flex; gap: clamp(26px, 5vw, 56px); margin-top: 40px; flex-wrap: wrap; }
-  .stat .n { font-family: var(--pixel); font-size: clamp(30px, 4vw, 46px); font-weight: 600; line-height: 1; color: var(--ink); }
+  .stat .n { font-family: var(--mono); font-size: clamp(30px, 4vw, 46px); font-weight: 600; line-height: 1; color: var(--ink); }
   .stat .n .accent { color: var(--ink); }
   .stat .l { color: var(--faint); font-family: var(--mono); font-size: 12px; margin-top: 10px; max-width: 18ch; }
   .about-more { margin-top: clamp(30px, 4vw, 44px); }
@@ -41,7 +41,7 @@
   .work-card:hover .frame { border-color: var(--ink); }
   .work-card:hover .frame .ph { transform: scale(1.03); }
   .work-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 16px; }
-  .work-meta .t { font-family: var(--pixel); font-size: clamp(16px, 1.8vw, 21px); font-weight: 600; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .work-meta .t { font-family: var(--mono); font-size: clamp(16px, 1.8vw, 21px); font-weight: 600; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
   .work-card:hover .work-meta .t { text-decoration: underline; }
   .work-meta .s { color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 5px; }
   .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
@@ -54,23 +54,8 @@
   .svc h3 { font-size: clamp(16px, 1.8vw, 22px); }
   .svc p { color: var(--ink-soft); font-size: 12.5px; line-height: 1.7; max-width: 36ch; }
 
-  /* ---------- testimonials (dark band) ---------- */
-  .testi { background: var(--night); color: var(--night-ink); padding-block: clamp(56px, 9vw, 120px); overflow: hidden; }
-  .t-viewport { overflow: hidden; margin-top: clamp(28px, 4vw, 44px); }
-  .t-track { display: flex; gap: 24px; transition: transform .7s var(--ease); }
-  .t-card { flex: 0 0 100%; border: 1px solid var(--night-line); padding: clamp(28px, 4vw, 56px); background: transparent; }
-  .t-card blockquote { font-family: var(--mono); font-weight: 500; font-size: clamp(16px, 2.4vw, 26px); letter-spacing: -0.01em; line-height: 1.42; max-width: 26ch; color: var(--night-ink); }
-  .t-who { display: flex; align-items: center; gap: 14px; margin-top: clamp(26px, 4vw, 40px); }
-  .t-who .av { width: 44px; height: 44px; flex: none; }
-  .t-who .nm { font-family: var(--pixel); font-weight: 500; font-size: 13px; color: var(--night-ink); }
-  .t-who .rl { color: var(--night-faint); font-family: var(--mono); font-size: 11px; }
-  .t-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 28px; }
-  .t-dots { display: flex; gap: 8px; }
-  .t-dot { width: 8px; height: 8px; border-radius: 0; background: var(--night-line); transition: background .3s, width .3s; }
-  .t-dot.on { background: var(--night-ink); width: 22px; }
-  .t-arrows { display: flex; gap: 20px; }
-  .t-arrows button { font-family: var(--mono); font-size: 14px; color: var(--night-soft); transition: color .25s; }
-  .t-arrows button:hover { color: var(--night-ink); }
+  /* ---------- services icons ---------- */
+  .svc-icon { width: 22px; height: 22px; color: var(--ink); flex: none; }
 
   /* ---------- faq ---------- */
   .faq { padding-block: clamp(56px, 9vw, 120px); }
@@ -78,7 +63,7 @@
   .faq-list { display: flex; flex-direction: column; }
   .faq-item { border-top: 1px solid var(--line); }
   .faq-item:last-child { border-bottom: 1px solid var(--line); }
-  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; text-align: left; padding: clamp(20px, 2.5vw, 28px) 0; font-family: var(--pixel); font-size: clamp(15px, 1.8vw, 20px); font-weight: 600; color: var(--ink); }
+  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; text-align: left; padding: clamp(20px, 2.5vw, 28px) 0; font-family: var(--mono); font-size: clamp(15px, 1.8vw, 20px); font-weight: 600; color: var(--ink); }
   .faq-q .ind { flex: none; width: 22px; text-align: center; }
   .faq-q .ind::before { content: "+"; font-family: var(--mono); font-size: 16px; color: var(--ink-soft); }
   .faq-item.open .faq-q .ind::before { content: "–"; color: var(--ink); }
@@ -248,64 +233,38 @@
     <div class="svc-grid">
       <div class="svc reveal">
         <span class="num">01</span>
+        <svg class="svc-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="3" width="18" height="13" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="2" y1="7" x2="20" y2="7" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="5" y1="5" x2="5" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="8" y1="5" x2="8" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="7" y1="19" x2="15" y2="19" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="11" y1="16" x2="11" y2="19" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
         <h3 class="h3">UI/UX Design</h3>
         <p>App and interface design that combines creativity with function — built to elevate the product and the brand around it.</p>
       </div>
       <div class="svc reveal" data-d="1">
         <span class="num">02</span>
+        <svg class="svc-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="11" cy="11" r="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <ellipse cx="11" cy="11" rx="3.25" ry="8.25" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="2.75" y1="11" x2="19.25" y2="11" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="3.5" y1="7.5" x2="18.5" y2="7.5" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="3.5" y1="14.5" x2="18.5" y2="14.5" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
         <h3 class="h3">Web Design</h3>
         <p>Robust, scalable websites on modern foundations — fast, responsive and clear across every device.</p>
       </div>
       <div class="svc reveal" data-d="2">
         <span class="num">03</span>
+        <svg class="svc-icon" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="11,2 20,8 20,14 11,20 2,14 2,8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <line x1="2" y1="8" x2="20" y2="8" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="11" y1="2" x2="11" y2="20" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
         <h3 class="h3">Branding</h3>
         <p>Identities that help businesses stand out and build trust — aligning strategy, design and storytelling.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testi" id="testimonials">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Clients Feedback</span>
-      <h2 class="h2">Trusted by the founders<br />we work alongside.</h2>
-    </div>
-    <div data-carousel class="reveal" data-d="1">
-      <div class="t-viewport">
-        <div class="t-track">
-          <figure class="t-card">
-            <blockquote>Outstanding design services. The team's creativity and attention to detail exceeded our expectations, and helped us scale the product and sales.</blockquote>
-            <figcaption class="t-who">
-              <span class="ph circle av" data-label=""></span>
-              <span>
-                <span class="nm">Jayant Bhawal</span><br />
-                <span class="rl">Co-founder, Middleware</span>
-              </span>
-            </figcaption>
-          </figure>
-          <figure class="t-card">
-            <blockquote>Exceptional design experience. Their innovation and precision brought our vision to life, and made collaboration smooth from start to finish.</blockquote>
-            <figcaption class="t-who">
-              <span class="ph circle av" data-label=""></span>
-              <span>
-                <span class="nm">Rahul Mathur</span><br />
-                <span class="rl">Founder, Verak</span>
-              </span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="t-nav">
-        <div class="t-dots">
-          <button class="t-dot on"></button>
-          <button class="t-dot"></button>
-        </div>
-        <div class="t-arrows">
-          <button data-prev aria-label="Previous">← Prev</button>
-          <button data-next aria-label="Next">Next →</button>
-        </div>
       </div>
     </div>
   </div>
