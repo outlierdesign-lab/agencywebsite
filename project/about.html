@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Outlier Labs</title>
+<meta name="description" content="A team of builders shaping products and strategy that stand out." />
+<link rel="stylesheet" href="assets/styles.css" />
+<style>
+  .page-hero { padding-top: clamp(116px, 16vw, 190px); padding-bottom: clamp(34px, 6vw, 56px); }
+  .page-hero h1 { max-width: 18ch; margin-top: 20px; font-size: clamp(28px, 4.8vw, 52px); }
+  .page-hero .lead { margin-top: 24px; max-width: 52ch; }
+
+  .ab-img { padding-bottom: clamp(40px, 6vw, 80px); }
+  .ab-img .ph { aspect-ratio: 16/7; }
+
+  .ab-vals { padding-block: clamp(50px, 8vw, 100px); }
+  .ab-grid { display: grid; grid-template-columns: 0.7fr 1.5fr; gap: clamp(30px, 5vw, 64px); align-items: start; }
+  .vals { display: flex; flex-direction: column; }
+  .val { display: grid; grid-template-columns: 56px 1fr; gap: 20px; padding: clamp(24px, 3vw, 36px) 0; border-top: 1px solid var(--line); align-items: start; }
+  .val:last-child { border-bottom: 1px solid var(--line); }
+  .val .vn { font-family: var(--mono); color: var(--faint); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; }
+  .val h3 { font-size: clamp(16px, 2vw, 22px); margin-bottom: 10px; }
+  .val p { color: var(--ink-soft); font-size: 12.5px; line-height: 1.7; max-width: 56ch; }
+
+  /* dark stats band */
+  .ab-stats { background: var(--night); color: var(--night-ink); padding-block: clamp(50px, 8vw, 96px); }
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 40px); }
+  .sc { border: none; border-top: 1px solid var(--night-line); border-radius: 0; padding: 20px 0 0; }
+  .sc .n { font-family: var(--pixel); font-size: clamp(28px, 4vw, 46px); font-weight: 600; line-height: 1; color: var(--night-ink); }
+  .sc .n .accent { color: var(--night-ink); }
+  .sc .l { color: var(--night-soft); font-family: var(--mono); font-size: 12px; margin-top: 12px; }
+
+  .ab-people { padding-block: clamp(50px, 8vw, 100px); }
+  .ppl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 2vw, 26px); margin-top: clamp(30px, 4vw, 48px); }
+  .person .ph { aspect-ratio: 1/1.1; }
+  .person .nm { font-family: var(--pixel); font-weight: 600; font-size: 18px; margin-top: 14px; color: var(--ink); }
+  .person .rl { color: var(--faint); font-family: var(--mono); font-size: 12px; margin-top: 4px; }
+
+  @media (max-width: 880px) {
+    .ab-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+    .sc { padding-block: 22px 0; }
+    .ppl-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) { .ppl-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Outlier Labs</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="works.html">Works</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact-us.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact-us.html" class="btn btn-primary">Contact <span class="arrow">↗</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="works.html">Works</a>
+  <a href="about.html" class="active">About</a>
+  <a href="contact-us.html">Contact</a>
+  <div class="mm-foot"><a href="https://x.com/postmilane">Twitter</a><a href="https://www.linkedin.com/in/milannv/">LinkedIn</a></div>
+</div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">About Us</span>
+    <h1 class="display reveal" data-d="1">We are a team of builders.</h1>
+    <p class="lead reveal" data-d="2">We love shaping products and strategy that stand out and earn the trust of users and investors. Outlier Labs is a small, senior studio that partners with founders from first sketch to shipped product.</p>
+  </div>
+</header>
+
+<section class="ab-img">
+  <div class="wrap reveal">
+    <div class="ph" data-label="Studio / team photo"></div>
+  </div>
+</section>
+
+<section class="ab-vals">
+  <div class="wrap">
+    <div class="ab-grid">
+      <div class="section-head reveal"><span class="eyebrow">How we work</span><h2 class="h2">Principles<br />we build on.</h2></div>
+      <div class="vals reveal" data-d="1">
+        <div class="val"><span class="vn">01</span><div><h3 class="h3">Strategy before pixels</h3><p>Great design starts with a sharp point of view. We dig into the business, the users and the market before a single screen gets drawn.</p></div></div>
+        <div class="val"><span class="vn">02</span><div><h3 class="h3">Ship, learn, iterate</h3><p>We move in tight weekly cycles with unlimited revisions, so the work compounds and you're never waiting on one big reveal.</p></div></div>
+        <div class="val"><span class="vn">03</span><div><h3 class="h3">Built to earn trust</h3><p>From users to investors, the products we make are designed to feel credible — clear, considered and genuinely loved.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ab-stats">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="sc reveal"><div class="n">8<span class="accent">+</span></div><div class="l">Years crafting products</div></div>
+      <div class="sc reveal" data-d="1"><div class="n">40<span class="accent">+</span></div><div class="l">Products &amp; brands shipped</div></div>
+      <div class="sc reveal" data-d="2"><div class="n">$70M<span class="accent">+</span></div><div class="l">Raised by our partners</div></div>
+      <div class="sc reveal" data-d="3"><div class="n">∞</div><div class="l">Revisions, always</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ab-people">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">The team</span><h2 class="h2">The people behind the work.</h2></div>
+    <div class="ppl-grid">
+      <div class="person reveal"><div class="ph" data-label="Portrait"></div><div class="nm">Milan Verma</div><div class="rl">Founder &amp; Design Lead</div></div>
+      <div class="person reveal" data-d="1"><div class="ph" data-label="Portrait"></div><div class="nm">Design Partner</div><div class="rl">Product &amp; UX</div></div>
+      <div class="person reveal" data-d="2"><div class="ph" data-label="Portrait"></div><div class="nm">Engineering Partner</div><div class="rl">Front-end &amp; Systems</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow" style="justify-content:center;">Let's Talk</span>
+      <h2 class="h2" style="margin-top:18px;">Want to build<br />with us?</h2>
+      <a href="mailto:milanvermadesign@gmail.com" class="cta-mail">milanvermadesign@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="dot"></span>Outlier Labs</a>
+        <p>We design outstanding products and brand experiences that stand out in the vast sea of products.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a><a href="works.html">Works</a><a href="about.html">About</a><a href="contact-us.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:milanvermadesign@gmail.com">milanvermadesign@gmail.com</a>
+        <p>+91 9928484665</p>
+        <p>Near Gulabgarh, Vande Mataram Marg, Jaipur, RJ, India</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Outlier Labs</span>
+      <div class="foot-socials">
+        <a href="https://x.com/postmilane" aria-label="Twitter">Twitter</a>
+        <a href="https://www.linkedin.com/in/milannv/" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

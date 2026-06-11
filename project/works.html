@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Works — Outlier Labs</title>
+<meta name="description" content="Selected products and brands we've shaped at Outlier Labs." />
+<link rel="stylesheet" href="assets/styles.css" />
+<style>
+  .page-hero { padding-top: clamp(116px, 16vw, 190px); padding-bottom: clamp(34px, 6vw, 60px); }
+  .page-hero h1 { max-width: 14ch; margin-top: 20px; font-size: clamp(28px, 4.8vw, 52px); }
+  .page-hero .lead { margin-top: 24px; max-width: 46ch; }
+
+  .w-list { padding-bottom: clamp(50px, 8vw, 100px); display: flex; flex-direction: column; gap: clamp(44px, 7vw, 92px); }
+  .w-row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .w-row:nth-child(even) .w-frame { order: 2; }
+  .w-frame { aspect-ratio: 4/3; overflow: hidden; border: 1px solid var(--line); background: #fafafa; position: relative; transition: border-color .3s; }
+  .w-frame .ph { position: absolute; inset: 0; border: none; transition: transform .9s var(--ease); }
+  .w-row:hover .w-frame { border-color: var(--ink); }
+  .w-row:hover .w-frame .ph { transform: scale(1.03); }
+  .w-info .idx { font-family: var(--mono); color: var(--faint); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .w-info h2 { font-size: clamp(24px, 3.4vw, 40px); margin: 12px 0 10px; }
+  .w-info .role { color: var(--ink-soft); font-family: var(--mono); font-size: 13px; }
+  .w-info p { color: var(--ink-soft); margin-top: 16px; max-width: 44ch; font-size: 12.5px; line-height: 1.7; }
+  .w-tags { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 20px; }
+  .w-tags span { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+  .w-tags .fund { color: var(--ink); }
+  .w-link { margin-top: 24px; }
+
+  @media (max-width: 880px) {
+    .w-row { grid-template-columns: 1fr; gap: 20px; }
+    .w-row:nth-child(even) .w-frame { order: 0; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Outlier Labs</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="works.html" class="active">Works</a>
+      <a href="about.html">About</a>
+      <a href="contact-us.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact-us.html" class="btn btn-primary">Contact <span class="arrow">↗</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="works.html" class="active">Works</a>
+  <a href="about.html">About</a>
+  <a href="contact-us.html">Contact</a>
+  <div class="mm-foot"><a href="https://x.com/postmilane">Twitter</a><a href="https://www.linkedin.com/in/milannv/">LinkedIn</a></div>
+</div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Proud Work</span>
+    <h1 class="display reveal" data-d="1">Work we're<br />proud of.</h1>
+    <p class="lead reveal" data-d="2">A look at the products and brands we've shaped — many of which went on to raise from the world's best investors.</p>
+  </div>
+</header>
+
+<section class="w-list">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:inherit;">
+    <article class="w-row reveal">
+      <div class="w-frame"><div class="ph" data-label="Blend — brand & app screens"></div></div>
+      <div class="w-info">
+        <span class="idx">01 — Brand &amp; App Design</span>
+        <h2>Blend</h2>
+        <div class="role">A relationship-enhancing app</div>
+        <p>An end-to-end brand identity and product design for an app that helps couples grow closer through small, intentional daily moments.</p>
+        <div class="w-tags"><span>Brand Identity</span><span>App Design</span><span>UI/UX</span></div>
+        <a href="work/blend-app.html" class="w-link btn btn-primary">View case study <span class="arrow">↗</span></a>
+      </div>
+    </article>
+
+    <article class="w-row reveal">
+      <div class="w-frame"><div class="ph" data-label="Middleware — product & website"></div></div>
+      <div class="w-info">
+        <span class="idx">02 — Product &amp; Website</span>
+        <h2>Middleware</h2>
+        <div class="role">Engineering analytics platform</div>
+        <p>Product design and a conversion-focused marketing site for a developer-productivity platform — built to win trust with both engineers and investors.</p>
+        <div class="w-tags"><span>Product Design</span><span>Website</span><span class="fund">$1M Pre-Seed</span></div>
+        <a href="work/middlewarehq.html" class="w-link btn btn-primary">View case study <span class="arrow">↗</span></a>
+      </div>
+    </article>
+
+    <article class="w-row reveal">
+      <div class="w-frame"><div class="ph" data-label="Verak — fintech app & web"></div></div>
+      <div class="w-info">
+        <span class="idx">03 — App &amp; Website</span>
+        <h2>Verak</h2>
+        <div class="role">YC-backed fintech</div>
+        <p>A clear, trustworthy app and website for a Y Combinator-backed insurance fintech serving millions across India.</p>
+        <div class="w-tags"><span>App Design</span><span>Website</span><span class="fund">$1.8M Seed</span></div>
+        <a href="work/taskify-app.html" class="w-link btn btn-primary">View case study <span class="arrow">↗</span></a>
+      </div>
+    </article>
+
+    <article class="w-row reveal">
+      <div class="w-frame"><div class="ph" data-label="InsuranceDekho — web & app"></div></div>
+      <div class="w-info">
+        <span class="idx">04 — Web &amp; App Design</span>
+        <h2>InsuranceDekho</h2>
+        <div class="role">Insurance giant</div>
+        <p>Web and app design work for one of India's largest insurance marketplaces, balancing scale, clarity and conversion across a massive product surface.</p>
+        <div class="w-tags"><span>Web Design</span><span>App Design</span><span class="fund">$70M Series C</span></div>
+        <a href="work/fashion-brand.html" class="w-link btn btn-primary">View case study <span class="arrow">↗</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow" style="justify-content:center;">Let's Talk</span>
+      <h2 class="h2" style="margin-top:18px;">Have a product worth<br />building well?</h2>
+      <a href="mailto:milanvermadesign@gmail.com" class="cta-mail">milanvermadesign@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="dot"></span>Outlier Labs</a>
+        <p>We design outstanding products and brand experiences that stand out in the vast sea of products.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a><a href="works.html">Works</a><a href="about.html">About</a><a href="contact-us.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:milanvermadesign@gmail.com">milanvermadesign@gmail.com</a>
+        <p>+91 9928484665</p>
+        <p>Near Gulabgarh, Vande Mataram Marg, Jaipur, RJ, India</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Outlier Labs</span>
+      <div class="foot-socials">
+        <a href="https://x.com/postmilane" aria-label="Twitter">Twitter</a>
+        <a href="https://www.linkedin.com/in/milannv/" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
