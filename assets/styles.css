@@ -79,6 +79,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ---------- layout ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad); }
 section { position: relative; }
+section[id] { scroll-margin-top: 80px; }
 
 /* ---------- type ---------- */
 .eyebrow {
@@ -274,7 +275,7 @@ h1, h2, h3, h4 { font-family: var(--pixel); font-weight: 600; line-height: 1.06;
 .cs-results .eyebrow::before { background: var(--night-ink); }
 .cs-results .rg { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(26px, 4vw, 48px); margin-top: clamp(28px, 4vw, 44px); }
 .cs-results .rc { border-top: 1px solid var(--night-line); padding-top: 20px; }
-.cs-results .rc .n { font-family: var(--mono); font-weight: 600; font-size: clamp(26px, 3.4vw, 40px); line-height: 1; color: var(--night-ink); letter-spacing: 0.01em; }
+.cs-results .rc .n { font-family: var(--pixel); font-weight: 600; font-size: clamp(26px, 3.4vw, 40px); line-height: 1; color: var(--night-ink); letter-spacing: 0.01em; }
 .cs-results .rc .n .accent { color: var(--night-ink); }
 .cs-results .rc .l { font-family: var(--mono); color: var(--night-soft); font-size: 12px; line-height: 1.6; margin-top: 16px; max-width: 24ch; }
 

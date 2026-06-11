@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Outlier Labs</title>
+<meta name="description" content="Let's talk. Tell us about your product and we'll get back to you." />
+<link rel="stylesheet" href="assets/styles.css" />
+<style>
+  .page-hero { padding-top: clamp(116px, 16vw, 190px); padding-bottom: clamp(30px, 5vw, 52px); }
+  .page-hero h1 { max-width: 16ch; margin-top: 20px; font-size: clamp(28px, 4.8vw, 52px); }
+  .page-hero .lead { margin-top: 24px; max-width: 46ch; }
+
+  .ct-wrap { padding-bottom: clamp(50px, 8vw, 100px); }
+  .ct-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(34px, 6vw, 80px); align-items: start; }
+
+  .form { display: grid; gap: 22px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field label { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+  .field input, .field textarea {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 0;
+    padding: 13px 14px; color: var(--ink); font-family: var(--mono); font-size: 13px; width: 100%;
+    transition: border-color .25s;
+  }
+  .field input::placeholder, .field textarea::placeholder { color: var(--faint); }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--ink); }
+  .field textarea { resize: vertical; min-height: 130px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line); padding: 8px 14px; border-radius: 0; cursor: pointer; transition: all .2s; user-select: none; }
+  .chip.on, .chip:hover { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+  .form-submit { justify-self: start; margin-top: 4px; font-size: 13px; }
+  .form-note { color: var(--faint); font-family: var(--mono); font-size: 11px; }
+  .sent { display: none; align-items: center; gap: 10px; border: 1px solid var(--ink); border-radius: 0; padding: 14px 16px; color: var(--ink); font-family: var(--mono); font-size: 12px; }
+  .sent.show { display: flex; }
+
+  .ct-info { display: flex; flex-direction: column; }
+  .ct-card { border: none; border-top: 1px solid var(--line); border-radius: 0; padding: clamp(20px, 2.4vw, 28px) 0; background: none; }
+  .ct-card:first-child { border-top: none; padding-top: 0; }
+  .ct-card h4 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--faint); font-weight: 500; margin-bottom: 10px; }
+  .ct-card a, .ct-card p { color: var(--ink); font-family: var(--mono); font-size: 14px; line-height: 1.5; }
+  .ct-card a { text-underline-offset: 4px; }
+  .ct-card a:hover { text-decoration: underline; }
+  .ct-socials { display: flex; gap: 18px; margin-top: 2px; }
+  .ct-socials a { width: auto; height: auto; border: none; border-radius: 0; display: inline; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+  .ct-socials a:hover { color: var(--ink); text-decoration: underline; background: none; }
+
+  @media (max-width: 880px) { .ct-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .field-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><svg class="brand-arr" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M5.5 2H12V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Outlier Labs</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#work">Works</a>
+    </div>
+    <div class="nav-cta">
+      <a href="mailto:milanvermadesign@gmail.com" class="btn btn-primary">Email us <span class="arrow">↗</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="index.html#work">Works</a>
+  <a href="contact-us.html" class="active">Contact</a>
+  <div class="mm-foot"><a href="https://x.com/postmilane">Twitter</a><a href="https://www.linkedin.com/in/milannv/">LinkedIn</a></div>
+</div>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Let's Talk</span>
+    <h1 class="display reveal" data-d="1">Let's build<br />something loved.</h1>
+    <p class="lead reveal" data-d="2">Tell us about your product, your timeline and your ambition. We read every message and reply within a day or two.</p>
+  </div>
+</header>
+
+<section class="ct-wrap">
+  <div class="wrap">
+    <div class="ct-grid">
+      <form class="form reveal" id="contactForm" novalidate>
+        <div class="sent" id="sent">✓ Thanks — your message is ready to send. We'll be in touch soon.</div>
+        <div class="field-row">
+          <div class="field"><label for="name">Name</label><input id="name" type="text" placeholder="Your name" required /></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@company.com" required /></div>
+        </div>
+        <div class="field"><label for="company">Company</label><input id="company" type="text" placeholder="Company or product name" /></div>
+        <div class="field">
+          <label>What do you need?</label>
+          <div class="chips">
+            <span class="chip">UI/UX Design</span>
+            <span class="chip">Web Design</span>
+            <span class="chip">Branding</span>
+            <span class="chip">Product Strategy</span>
+            <span class="chip">Front-end</span>
+          </div>
+        </div>
+        <div class="field"><label for="msg">Project details</label><textarea id="msg" placeholder="Tell us what you're building…"></textarea></div>
+        <button type="submit" class="btn btn-primary form-submit">Send message <span class="arrow">↗</span></button>
+        <p class="form-note">Prefer email? Write to milanvermadesign@gmail.com</p>
+      </form>
+
+      <aside class="ct-info reveal" data-d="1">
+        <div class="ct-card">
+          <h4>Email</h4>
+          <a href="mailto:milanvermadesign@gmail.com">milanvermadesign@gmail.com</a>
+        </div>
+        <div class="ct-card">
+          <h4>Phone</h4>
+          <p>+91 9928484665</p>
+        </div>
+        <div class="ct-card">
+          <h4>Office</h4>
+          <p>Near Gulabgarh, Vande Mataram Marg,<br />Jaipur, RJ, India</p>
+        </div>
+        <div class="ct-card">
+          <h4>Social</h4>
+          <div class="ct-socials">
+            <a href="https://x.com/postmilane" aria-label="Twitter">Twitter</a>
+            <a href="https://www.linkedin.com/in/milannv/" aria-label="LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><svg class="brand-arr" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M5.5 2H12V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Outlier Labs</a>
+        <p>We design outstanding products and brand experiences that stand out in the vast sea of products.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a><a href="index.html#work">Works</a><a href="contact-us.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:milanvermadesign@gmail.com">milanvermadesign@gmail.com</a>
+        <p>+91 9928484665</p>
+        <p>Near Gulabgarh, Vande Mataram Marg, Jaipur, RJ, India</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Outlier Labs</span>
+      <div class="foot-socials">
+        <a href="https://x.com/postmilane" aria-label="Twitter">Twitter</a>
+        <a href="https://www.linkedin.com/in/milannv/" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+<script>
+  document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => c.classList.toggle('on')));
+  const form = document.getElementById('contactForm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const ok = form.querySelector('#name').value.trim() && form.querySelector('#email').value.trim();
+    if (!ok) { form.querySelector('#name').focus(); return; }
+    document.getElementById('sent').classList.add('show');
+    form.querySelector('button[type=submit]').textContent = 'Sent ✓';
+  });
+</script>
+</body>
+</html>
