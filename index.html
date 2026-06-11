@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Outlier Labs — We build brands and products that are loved</title>
+<meta name="description" content="We design outstanding products and brand experiences." />
+<link rel="stylesheet" href="assets/styles.css" />
+<style>
+  /* ---------- hero ---------- */
+  .hero { padding-top: clamp(120px, 17vw, 200px); padding-bottom: clamp(40px, 7vw, 84px); }
+  .hero-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: clamp(28px, 4.5vw, 52px); }
+  .hero-note { max-width: 340px; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
+  .hero h1 { max-width: 17ch; font-size: clamp(28px, 4.8vw, 52px); }
+  .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: clamp(34px, 5vw, 56px); flex-wrap: wrap; }
+
+  /* ---------- logos ---------- */
+  .logos { padding-block: clamp(34px, 5vw, 56px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .logos .cap { text-align: center; color: var(--faint); font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 26px; }
+  .logo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(22px, 5vw, 58px); }
+  .logo-row .lg { font-family: var(--pixel); font-weight: 500; font-size: clamp(15px, 2vw, 22px); color: var(--faint); text-transform: uppercase; letter-spacing: 0.01em; transition: color .3s; }
+  .logo-row .lg:hover { color: var(--ink); }
+
+  /* ---------- about ---------- */
+  .about { padding-block: clamp(56px, 9vw, 120px); }
+  .about-grid { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: clamp(30px, 5vw, 72px); align-items: start; }
+  .about-stmt { font-family: var(--mono); font-weight: 500; font-size: clamp(15px, 1.9vw, 20px); line-height: 1.5; color: var(--ink); max-width: 34ch; letter-spacing: -0.01em; }
+  .about-stats { display: flex; gap: clamp(26px, 5vw, 56px); margin-top: 40px; flex-wrap: wrap; }
+  .stat .n { font-family: var(--pixel); font-size: clamp(30px, 4vw, 46px); font-weight: 600; line-height: 1; color: var(--ink); }
+  .stat .n .accent { color: var(--ink); }
+  .stat .l { color: var(--faint); font-family: var(--mono); font-size: 12px; margin-top: 10px; max-width: 18ch; }
+  .about-more { margin-top: clamp(30px, 4vw, 44px); }
+
+  /* ---------- work ---------- */
+  .work { padding-block: clamp(50px, 8vw, 110px); }
+  .work-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(30px, 5vw, 52px); flex-wrap: wrap; }
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(28px, 3.5vw, 44px) clamp(20px, 2.4vw, 30px); }
+  .work-card { display: block; }
+  .work-card .frame { aspect-ratio: 4 / 3; position: relative; overflow: hidden; background: #fafafa; border: 1px solid var(--line); transition: border-color .3s; }
+  .work-card .frame .ph { position: absolute; inset: 0; border: none; transition: transform .9s var(--ease); }
+  .work-card:hover .frame { border-color: var(--ink); }
+  .work-card:hover .frame .ph { transform: scale(1.03); }
+  .work-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 16px; }
+  .work-meta .t { font-family: var(--pixel); font-size: clamp(16px, 1.8vw, 21px); font-weight: 600; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .work-card:hover .work-meta .t { text-decoration: underline; }
+  .work-meta .s { color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 5px; }
+  .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+
+  /* ---------- services ---------- */
+  .services { padding-block: clamp(50px, 8vw, 110px); }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 44px); margin-top: clamp(30px, 5vw, 50px); }
+  .svc { display: flex; flex-direction: column; gap: 12px; padding-top: 22px; border-top: 1px solid var(--ink); }
+  .svc .num { font-family: var(--mono); color: var(--faint); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; }
+  .svc h3 { font-size: clamp(16px, 1.8vw, 22px); }
+  .svc p { color: var(--ink-soft); font-size: 12.5px; line-height: 1.7; max-width: 36ch; }
+
+  /* ---------- testimonials (dark band) ---------- */
+  .testi { background: var(--night); color: var(--night-ink); padding-block: clamp(56px, 9vw, 120px); overflow: hidden; }
+  .t-viewport { overflow: hidden; margin-top: clamp(28px, 4vw, 44px); }
+  .t-track { display: flex; gap: 24px; transition: transform .7s var(--ease); }
+  .t-card { flex: 0 0 100%; border: 1px solid var(--night-line); padding: clamp(28px, 4vw, 56px); background: transparent; }
+  .t-card blockquote { font-family: var(--mono); font-weight: 500; font-size: clamp(16px, 2.4vw, 26px); letter-spacing: -0.01em; line-height: 1.42; max-width: 26ch; color: var(--night-ink); }
+  .t-who { display: flex; align-items: center; gap: 14px; margin-top: clamp(26px, 4vw, 40px); }
+  .t-who .av { width: 44px; height: 44px; flex: none; }
+  .t-who .nm { font-family: var(--pixel); font-weight: 500; font-size: 13px; color: var(--night-ink); }
+  .t-who .rl { color: var(--night-faint); font-family: var(--mono); font-size: 11px; }
+  .t-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 28px; }
+  .t-dots { display: flex; gap: 8px; }
+  .t-dot { width: 8px; height: 8px; border-radius: 0; background: var(--night-line); transition: background .3s, width .3s; }
+  .t-dot.on { background: var(--night-ink); width: 22px; }
+  .t-arrows { display: flex; gap: 20px; }
+  .t-arrows button { font-family: var(--mono); font-size: 14px; color: var(--night-soft); transition: color .25s; }
+  .t-arrows button:hover { color: var(--night-ink); }
+
+  /* ---------- faq ---------- */
+  .faq { padding-block: clamp(56px, 9vw, 120px); }
+  .faq-grid { display: grid; grid-template-columns: 0.7fr 1.5fr; gap: clamp(30px, 5vw, 64px); align-items: start; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-top: 1px solid var(--line); }
+  .faq-item:last-child { border-bottom: 1px solid var(--line); }
+  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; text-align: left; padding: clamp(20px, 2.5vw, 28px) 0; font-family: var(--pixel); font-size: clamp(15px, 1.8vw, 20px); font-weight: 600; color: var(--ink); }
+  .faq-q .ind { flex: none; width: 22px; text-align: center; }
+  .faq-q .ind::before { content: "+"; font-family: var(--mono); font-size: 16px; color: var(--ink-soft); }
+  .faq-item.open .faq-q .ind::before { content: "–"; color: var(--ink); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .45s var(--ease); }
+  .faq-a p { color: var(--ink-soft); font-size: 13px; line-height: 1.7; padding-bottom: clamp(20px, 2.5vw, 28px); max-width: 60ch; }
+
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .svc-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 680px) {
+    .work-grid { grid-template-columns: 1fr; }
+    .hero-top { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="dot"></span>Outlier Labs</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="works.html">Works</a>
+      <a href="about.html">About</a>
+      <a href="contact-us.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="contact-us.html" class="btn btn-primary">Contact <span class="arrow">↗</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu">
+  <a href="index.html" class="active">Home</a>
+  <a href="works.html">Works</a>
+  <a href="about.html">About</a>
+  <a href="contact-us.html">Contact</a>
+  <div class="mm-foot">
+    <a href="https://x.com/postmilane">Twitter</a>
+    <a href="https://www.linkedin.com/in/milannv/">LinkedIn</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="hero-section">
+  <div class="wrap">
+    <div class="hero-top reveal">
+      <span class="eyebrow">In the vast sea of products</span>
+      <p class="hero-note">A studio of builders shaping products &amp; strategy that stand out — trusted by users and investors alike.</p>
+    </div>
+    <h1 class="display reveal" data-d="1">We build brands and products that are loved.</h1>
+    <div class="hero-actions reveal" data-d="2">
+      <a href="contact-us.html" class="btn btn-primary">Contact <span class="arrow">↗</span></a>
+      <a href="works.html" class="btn btn-ghost">View our work</a>
+    </div>
+  </div>
+</header>
+
+<!-- LOGOS -->
+<section class="logos">
+  <div class="wrap reveal">
+    <p class="cap">We've worked with impactful companies including</p>
+    <div class="logo-row">
+      <span class="lg">Middleware</span>
+      <span class="lg">Verak</span>
+      <span class="lg">InsuranceDekho</span>
+      <span class="lg">Blend</span>
+      <span class="lg">YC</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal"><span class="eyebrow">About Us</span></div>
+      <div class="reveal" data-d="1">
+        <p class="about-stmt">We are a team of builders who love shaping products and strategy that stand out — and earn the trust of users and investors alike.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="n">8<span class="accent">+</span></div>
+            <div class="l">years crafting digital products</div>
+          </div>
+          <div class="stat">
+            <div class="n">$70M<span class="accent">+</span></div>
+            <div class="l">raised by companies we've shaped</div>
+          </div>
+          <div class="stat">
+            <div class="n">40<span class="accent">+</span></div>
+            <div class="l">products &amp; brands shipped</div>
+          </div>
+        </div>
+        <div class="about-more">
+          <a href="about.html" class="btn btn-ghost">Read more <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head">
+      <div class="section-head reveal">
+        <span class="eyebrow">Proud Work</span>
+        <h2 class="h2">Selected projects we're<br />proud to have shaped.</h2>
+      </div>
+      <a href="works.html" class="btn btn-ghost reveal" data-d="1">All works <span class="arrow">↗</span></a>
+    </div>
+    <div class="work-grid">
+      <a href="work/blend-app.html" class="work-card reveal">
+        <div class="frame"><div class="ph" data-label="Blend — app screens"></div></div>
+        <div class="work-meta">
+          <div>
+            <div class="t">Blend</div>
+            <div class="s">Relationship app · Brand &amp; App Design</div>
+          </div>
+        </div>
+      </a>
+      <a href="work/middlewarehq.html" class="work-card reveal" data-d="1">
+        <div class="frame"><div class="ph" data-label="Middleware — product UI"></div></div>
+        <div class="work-meta">
+          <div>
+            <div class="t">Middleware</div>
+            <div class="s">Product &amp; Website</div>
+          </div>
+          <div class="fund">$1M Pre-Seed</div>
+        </div>
+      </a>
+      <a href="work/taskify-app.html" class="work-card reveal">
+        <div class="frame"><div class="ph" data-label="Verak — fintech app"></div></div>
+        <div class="work-meta">
+          <div>
+            <div class="t">Verak</div>
+            <div class="s">YC-backed fintech · App &amp; Website</div>
+          </div>
+          <div class="fund">$1.8M Seed</div>
+        </div>
+      </a>
+      <a href="work/fashion-brand.html" class="work-card reveal" data-d="1">
+        <div class="frame"><div class="ph" data-label="InsuranceDekho — web & app"></div></div>
+        <div class="work-meta">
+          <div>
+            <div class="t">InsuranceDekho</div>
+            <div class="s">Insurance giant · Web &amp; App Design</div>
+          </div>
+          <div class="fund">$70M Series C</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2 class="h2">What we do, end to end.</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <span class="num">01</span>
+        <h3 class="h3">UI/UX Design</h3>
+        <p>App and interface design that combines creativity with function — built to elevate the product and the brand around it.</p>
+      </div>
+      <div class="svc reveal" data-d="1">
+        <span class="num">02</span>
+        <h3 class="h3">Web Design</h3>
+        <p>Robust, scalable websites on modern foundations — fast, responsive and clear across every device.</p>
+      </div>
+      <div class="svc reveal" data-d="2">
+        <span class="num">03</span>
+        <h3 class="h3">Branding</h3>
+        <p>Identities that help businesses stand out and build trust — aligning strategy, design and storytelling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Clients Feedback</span>
+      <h2 class="h2">Trusted by the founders<br />we work alongside.</h2>
+    </div>
+    <div data-carousel class="reveal" data-d="1">
+      <div class="t-viewport">
+        <div class="t-track">
+          <figure class="t-card">
+            <blockquote>Outstanding design services. The team's creativity and attention to detail exceeded our expectations, and helped us scale the product and sales.</blockquote>
+            <figcaption class="t-who">
+              <span class="ph circle av" data-label=""></span>
+              <span>
+                <span class="nm">Jayant Bhawal</span><br />
+                <span class="rl">Co-founder, Middleware</span>
+              </span>
+            </figcaption>
+          </figure>
+          <figure class="t-card">
+            <blockquote>Exceptional design experience. Their innovation and precision brought our vision to life, and made collaboration smooth from start to finish.</blockquote>
+            <figcaption class="t-who">
+              <span class="ph circle av" data-label=""></span>
+              <span>
+                <span class="nm">Rahul Mathur</span><br />
+                <span class="rl">Founder, Verak</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="t-nav">
+        <div class="t-dots">
+          <button class="t-dot on"></button>
+          <button class="t-dot"></button>
+        </div>
+        <div class="t-arrows">
+          <button data-prev aria-label="Previous">← Prev</button>
+          <button data-next aria-label="Next">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="section-head reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2 class="h2">Things founders<br />often ask.</h2>
+      </div>
+      <div class="faq-list reveal" data-d="1">
+        <div class="faq-item" data-faq>
+          <button class="faq-q">How long does it take to complete a design? <span class="ind"></span></button>
+          <div class="faq-a"><p>Most focused engagements ship a first meaningful version within one to two weeks, with full product or brand work running three to six weeks depending on scope. We work in tight weekly cycles so you see progress continuously rather than waiting for one big reveal.</p></div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q">What is included in the packages? <span class="ind"></span></button>
+          <div class="faq-a"><p>Every engagement covers strategy, UI/UX design, brand direction, and design-ready front-end handoff. You get source files, a documented design system, and direct access to the team throughout — no hidden add-ons.</p></div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q">Is there a limit to revisions? <span class="ind"></span></button>
+          <div class="faq-a"><p>No. Our plans are built around unlimited revisions within an active engagement, so we iterate until the work is genuinely right rather than merely delivered.</p></div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q">What if I need a custom design outside the plan? <span class="ind"></span></button>
+          <div class="faq-a"><p>We love the unusual briefs. Tell us what you're imagining and we'll scope a custom engagement tailored to your timeline, budget, and ambition — most of our favourite work started exactly this way.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow" style="justify-content:center;">Let's Talk</span>
+      <h2 class="h2" style="margin-top:18px;">Have a product worth<br />building well?</h2>
+      <a href="mailto:milanvermadesign@gmail.com" class="cta-mail">milanvermadesign@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand"><span class="dot"></span>Outlier Labs</a>
+        <p>We design outstanding products and brand experiences that stand out in the vast sea of products.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="works.html">Works</a>
+        <a href="about.html">About</a>
+        <a href="contact-us.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:milanvermadesign@gmail.com">milanvermadesign@gmail.com</a>
+        <p>+91 9928484665</p>
+        <p>Near Gulabgarh, Vande Mataram Marg, Jaipur, RJ, India</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Outlier Labs</span>
+      <div class="foot-socials">
+        <a href="https://x.com/postmilane" aria-label="Twitter">Twitter</a>
+        <a href="https://www.linkedin.com/in/milannv/" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
