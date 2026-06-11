@@ -134,7 +134,7 @@ h1, h2, h3, h4 { font-family: var(--pixel); font-weight: 600; line-height: 1.06;
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
 .brand { display: inline-flex; align-items: center; gap: 9px; font-family: var(--mono); font-weight: 600; font-size: 15px; letter-spacing: 0.02em; color: var(--ink); text-transform: uppercase; white-space: nowrap; }
 .brand .brand-arr { flex: none; width: 14px; height: 14px; }
-.nav-links { display: flex; align-items: center; gap: 22px; }
+.nav-links { display: flex; align-items: center; gap: 22px; margin-left: auto; margin-right: 32px; }
 .nav-links a {
   font-family: var(--mono); font-size: 11px; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); white-space: nowrap;
