@@ -9,6 +9,23 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // ---- homepage scroll-spy: toggle Home/Works active as user passes #work ----
+  const spy = document.querySelector('.nav-links[data-spy]');
+  const workSection = document.getElementById('work');
+  if (spy && workSection) {
+    const home = spy.querySelector('[data-nav="home"]');
+    const works = spy.querySelector('[data-nav="works"]');
+    const updateSpy = () => {
+      const top = workSection.getBoundingClientRect().top;
+      const onWorks = top < 120;
+      if (home) home.classList.toggle('active', !onWorks);
+      if (works) works.classList.toggle('active', onWorks);
+    };
+    window.addEventListener('scroll', updateSpy, { passive: true });
+    window.addEventListener('resize', updateSpy, { passive: true });
+    updateSpy();
+  }
+
   // ---- mobile menu ----
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.querySelector('.mobile-menu');
