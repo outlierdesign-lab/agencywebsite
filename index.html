@@ -20,10 +20,13 @@
   .logos { padding-block: clamp(34px, 5vw, 56px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .logos .cap { text-align: center; color: var(--faint); font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 26px; }
   .logo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(28px, 5.5vw, 64px); }
-  .logo-row .lg { font-family: var(--mono); font-weight: 500; font-size: clamp(15px, 2vw, 22px); color: var(--faint); text-transform: uppercase; letter-spacing: 0.01em; transition: color .3s; }
-  .logo-row .lg:hover { color: var(--ink); }
-  .logo-row .lg-img { height: clamp(22px, 2.6vw, 32px); width: auto; opacity: 0.5; filter: grayscale(1); transition: opacity .3s, filter .3s; }
-  .logo-row .lg-img:hover { opacity: 1; filter: grayscale(0); }
+  .lg-slot { display: inline-flex; align-items: center; }
+  .lg-slot img { height: clamp(22px, 2.6vw, 32px); width: auto; opacity: 0.5; filter: grayscale(1); transition: opacity .3s, filter .3s; }
+  .lg-slot:hover img { opacity: 1; filter: grayscale(0); }
+  .lg-slot > span { display: none; font-family: var(--mono); font-weight: 500; font-size: clamp(15px, 2vw, 22px); color: var(--faint); text-transform: uppercase; letter-spacing: 0.01em; transition: color .3s; }
+  .lg-slot.no-img img { display: none; }
+  .lg-slot.no-img > span { display: inline; }
+  .lg-slot.no-img > span:hover { color: var(--ink); }
   @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; gap: clamp(30px, 5vw, 50px); }
     .hero-image { aspect-ratio: 4 / 3; }
@@ -177,12 +180,11 @@
   <div class="wrap reveal">
     <p class="cap">We've worked with impactful companies including</p>
     <div class="logo-row">
-      <!-- Wordmarks for now. To swap any one for a real logo image, replace its <span> with:
-           <img src="assets/images/logos/<name>.png" alt="<Name>" class="lg-img"> -->
-      <span class="lg">Middleware</span>
-      <span class="lg">InsuranceDekho</span>
-      <span class="lg">Verak</span>
-      <span class="lg">Scenes</span>
+      <span class="lg-slot"><img src="assets/images/logos/agentcargo.png" alt="AgentCargo" onerror="this.parentNode.classList.add('no-img')"><span>AgentCargo</span></span>
+      <span class="lg-slot"><img src="assets/images/logos/middleware.png" alt="Middleware" onerror="this.parentNode.classList.add('no-img')"><span>Middleware</span></span>
+      <span class="lg-slot"><img src="assets/images/logos/insurancedekho.png" alt="InsuranceDekho" onerror="this.parentNode.classList.add('no-img')"><span>InsuranceDekho</span></span>
+      <span class="lg-slot"><img src="assets/images/logos/verak.png" alt="Verak" onerror="this.parentNode.classList.add('no-img')"><span>Verak</span></span>
+      <span class="lg-slot"><img src="assets/images/logos/scenes.png" alt="Scenes" onerror="this.parentNode.classList.add('no-img')"><span>Scenes</span></span>
     </div>
   </div>
 </section>
