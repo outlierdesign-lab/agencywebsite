@@ -8,12 +8,13 @@
 <link rel="stylesheet" href="assets/styles.css" />
 <style>
   /* ---------- hero ---------- */
-  .hero { padding-top: clamp(120px, 17vw, 200px); padding-bottom: clamp(40px, 7vw, 84px); }
+  .hero { padding-top: clamp(90px, 11vw, 140px); padding-bottom: clamp(40px, 7vw, 84px); }
   .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(34px, 6vw, 80px); align-items: center; }
-  .hero-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: clamp(28px, 4.5vw, 52px); }
+  .hero-top { display: flex; flex-direction: column; gap: 14px; margin-bottom: clamp(28px, 4.5vw, 52px); }
   .hero-note { max-width: 340px; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
   .hero h1 { max-width: 17ch; font-size: clamp(28px, 4.5vw, 48px); text-transform: uppercase; }
   .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: clamp(34px, 5vw, 56px); flex-wrap: wrap; }
+  .hero-right { margin-top: clamp(-60px, -4vw, -30px); }
   .hero-image { width: 100%; aspect-ratio: 4 / 5; border: none; background: var(--paper); background-size: cover; background-position: center; background-repeat: no-repeat; }
 
   /* ---------- logos ---------- */
@@ -39,6 +40,7 @@
   @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; gap: clamp(30px, 5vw, 50px); }
     .hero-image { aspect-ratio: 4 / 3; }
+    .hero-right { margin-top: 0; }
   }
 
   /* ---------- about ---------- */
@@ -161,9 +163,10 @@
     <div class="hero-grid">
       <div class="hero-left">
         <div class="hero-top reveal">
-          <p class="hero-note">Brands, websites and apps — shipped in weeks, not quarters. Built alongside tech and D2C founders raising pre-seed through Series C.</p>
+          <span class="eyebrow">In the vast sea of products</span>
+          <p class="hero-note">A studio of builders shaping products &amp; strategy that stand out — trusted by users and investors alike.</p>
         </div>
-        <h1 class="display reveal" data-d="1">Founder speed.<br />Studio quality.</h1>
+        <h1 class="display reveal" data-d="1">We build brands and products that are loved.</h1>
         <div class="hero-actions reveal" data-d="2">
           <a href="mailto:milanvermadesign@gmail.com" class="btn btn-primary">Email us <span class="arrow">↗</span></a>
           <a href="#work" class="btn btn-ghost">See the work</a>
@@ -196,7 +199,7 @@
     <div class="about-grid">
       <div class="reveal"><span class="eyebrow">About Us</span></div>
       <div class="reveal" data-d="1">
-        <p class="about-stmt">A small team of designers and builders who ship at the pace founders actually need. We've worked alongside dozens of teams — pre-seed to Series C, tech to D2C — and we know exactly what a slow studio costs you.</p>
+        <p class="about-stmt">We're a team that love working with driven founders and understand the importance of design and speed.</p>
         <div class="about-stats">
           <div class="stat">
             <div class="n">8<span class="accent">+</span></div>
