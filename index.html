@@ -9,10 +9,16 @@
 <style>
   /* ---------- hero ---------- */
   .hero { padding-top: clamp(120px, 17vw, 200px); padding-bottom: clamp(40px, 7vw, 84px); }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(34px, 6vw, 80px); align-items: center; }
   .hero-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: clamp(28px, 4.5vw, 52px); }
   .hero-note { max-width: 340px; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
-  .hero h1 { max-width: 17ch; font-size: clamp(28px, 4.8vw, 52px); text-transform: uppercase; }
+  .hero h1 { max-width: 17ch; font-size: clamp(28px, 4.5vw, 48px); text-transform: uppercase; }
   .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: clamp(34px, 5vw, 56px); flex-wrap: wrap; }
+  .hero-image { width: 100%; aspect-ratio: 4 / 5; border: 1px solid var(--line); background: repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px); background-size: cover; background-position: center; background-repeat: no-repeat; }
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; gap: clamp(30px, 5vw, 50px); }
+    .hero-image { aspect-ratio: 4 / 3; }
+  }
 
   /* ---------- logos ---------- */
   .logos { padding-block: clamp(34px, 5vw, 56px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -139,13 +145,20 @@
 <!-- HERO -->
 <header class="hero" id="hero-section">
   <div class="wrap">
-    <div class="hero-top reveal">
-      <p class="hero-note">Brands, websites and apps — shipped in weeks, not quarters. Built alongside tech and D2C founders raising pre-seed through Series C.</p>
-    </div>
-    <h1 class="display reveal" data-d="1">Founder speed.<br />Studio quality.</h1>
-    <div class="hero-actions reveal" data-d="2">
-      <a href="mailto:milanvermadesign@gmail.com" class="btn btn-primary">Email us <span class="arrow">↗</span></a>
-      <a href="#work" class="btn btn-ghost">See the work</a>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-top reveal">
+          <p class="hero-note">Brands, websites and apps — shipped in weeks, not quarters. Built alongside tech and D2C founders raising pre-seed through Series C.</p>
+        </div>
+        <h1 class="display reveal" data-d="1">Founder speed.<br />Studio quality.</h1>
+        <div class="hero-actions reveal" data-d="2">
+          <a href="mailto:milanvermadesign@gmail.com" class="btn btn-primary">Email us <span class="arrow">↗</span></a>
+          <a href="#work" class="btn btn-ghost">See the work</a>
+        </div>
+      </div>
+      <div class="hero-right reveal" data-d="2">
+        <div class="hero-image" style="background-image: url('assets/images/hero/01-hero.png'), repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
+      </div>
     </div>
   </div>
 </header>
