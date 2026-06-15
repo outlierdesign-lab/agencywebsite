@@ -15,6 +15,15 @@
   .hero h1 { max-width: 17ch; font-size: clamp(28px, 4.5vw, 48px); text-transform: uppercase; }
   .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: clamp(34px, 5vw, 56px); flex-wrap: wrap; }
   .hero-image { width: 100%; aspect-ratio: 4 / 5; border: 1px solid var(--line); background: repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px); background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+  /* ---------- logos ---------- */
+  .logos { padding-block: clamp(34px, 5vw, 56px); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .logos .cap { text-align: center; color: var(--faint); font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 26px; }
+  .logo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(28px, 5.5vw, 64px); }
+  .logo-row .lg { font-family: var(--mono); font-weight: 500; font-size: clamp(15px, 2vw, 22px); color: var(--faint); text-transform: uppercase; letter-spacing: 0.01em; transition: color .3s; }
+  .logo-row .lg:hover { color: var(--ink); }
+  .logo-row .lg-img { height: clamp(22px, 2.6vw, 32px); width: auto; opacity: 0.5; filter: grayscale(1); transition: opacity .3s, filter .3s; }
+  .logo-row .lg-img:hover { opacity: 1; filter: grayscale(0); }
   @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; gap: clamp(30px, 5vw, 50px); }
     .hero-image { aspect-ratio: 4 / 3; }
@@ -157,11 +166,26 @@
         </div>
       </div>
       <div class="hero-right reveal" data-d="2">
-        <div class="hero-image" style="background-image: url('assets/images/hero/01-hero.png'), repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
+        <div class="hero-image" style="background-image: url('assets/images/hero/01-hero.png?v=2'), repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
       </div>
     </div>
   </div>
 </header>
+
+<!-- LOGOS -->
+<section class="logos">
+  <div class="wrap reveal">
+    <p class="cap">We've worked with impactful companies including</p>
+    <div class="logo-row">
+      <!-- Wordmarks for now. To swap any one for a real logo image, replace its <span> with:
+           <img src="assets/images/logos/<name>.png" alt="<Name>" class="lg-img"> -->
+      <span class="lg">Middleware</span>
+      <span class="lg">InsuranceDekho</span>
+      <span class="lg">Verak</span>
+      <span class="lg">Scenes</span>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
@@ -214,7 +238,7 @@
       </a>
       <div class="work-card is-locked reveal" data-d="1">
         <div class="frame">
-          <div class="ph" data-label="" style="background:url('assets/images/middleware/01-hero.png') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
+          <div class="ph" data-label="" style="background:url('assets/images/middleware/01-hero.png?v=2') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
           <div class="card-overlay">
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <rect x="3" y="7" width="10" height="7.5" rx="0.5" stroke="currentColor" stroke-width="1.5"/>
