@@ -76,12 +76,15 @@
   .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(28px, 3.5vw, 44px) clamp(20px, 2.4vw, 30px); }
   .work-card { display: block; }
   .work-card .frame { aspect-ratio: 4 / 3; position: relative; overflow: hidden; background: #fafafa; border: 1px solid var(--line); transition: border-color .3s; }
-  .work-card .frame .ph { position: absolute; inset: 0; border: none; transition: transform .9s var(--ease); }
+  .work-card .frame .ph { position: absolute; inset: 0; border: none; filter: grayscale(1); transition: transform .9s var(--ease), filter .55s var(--ease); }
   .work-card:hover .frame { border-color: var(--ink); }
-  .work-card:hover .frame .ph { transform: scale(1.03); }
+  .work-card:hover .frame .ph { transform: scale(1.03); filter: grayscale(0); }
   .work-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 16px; }
   .work-meta .t { font-family: var(--mono); font-size: clamp(14px, 1.4vw, 17px); font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
   .work-card:hover .work-meta .t { text-decoration: underline; }
+  .work-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+  .work-tags .tag { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line); padding: 4px 9px; white-space: nowrap; transition: color .25s, border-color .25s; }
+  .work-card:hover .work-tags .tag { color: var(--ink); border-color: var(--ink); }
   .work-meta .s { color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 5px; }
   .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
 
@@ -254,7 +257,11 @@
         <div class="work-meta">
           <div>
             <div class="t">Blend</div>
-            <div class="s">Relationship app · Brand + App + Build</div>
+            <div class="s">Relationship app</div>
+            <div class="work-tags">
+              <span class="tag">Brand Identity</span>
+              <span class="tag">App</span>
+            </div>
           </div>
         </div>
       </a>
@@ -265,9 +272,12 @@
         <div class="work-meta">
           <div>
             <div class="t">Middleware</div>
-            <div class="s">Engineering platform · Features + Website</div>
+            <div class="s">Engineering platform</div>
+            <div class="work-tags">
+              <span class="tag">Website</span>
+              <span class="tag">App</span>
+            </div>
           </div>
-          <div class="fund">$1M Pre-Seed</div>
         </div>
       </a>
       <a href="work/agentcargo.html" class="work-card reveal">
@@ -275,7 +285,12 @@
         <div class="work-meta">
           <div>
             <div class="t">Agent Cargo</div>
-            <div class="s">AI agents for shipping · Brand + Product + Website</div>
+            <div class="s">AI agents for shipping</div>
+            <div class="work-tags">
+              <span class="tag">Brand Identity</span>
+              <span class="tag">App</span>
+              <span class="tag">Website</span>
+            </div>
           </div>
         </div>
       </a>
@@ -284,7 +299,10 @@
         <div class="work-meta">
           <div>
             <div class="t">Brace</div>
-            <div class="s">D2C clothing label · Brand Identity</div>
+            <div class="s">D2C clothing label</div>
+            <div class="work-tags">
+              <span class="tag">Brand Identity</span>
+            </div>
           </div>
         </div>
       </a>
