@@ -79,14 +79,14 @@
   .work-card .frame .ph { position: absolute; inset: 0; border: none; filter: grayscale(1); transition: transform .9s var(--ease), filter .55s var(--ease); }
   .work-card:hover .frame { border-color: var(--ink); }
   .work-card:hover .frame .ph { transform: scale(1.03); filter: grayscale(0); }
-  .work-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 16px; }
-  .work-meta .t { display: inline; font-family: var(--mono); font-size: clamp(14px, 1.4vw, 17px); font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .work-meta { display: block; margin-top: 16px; }
+  .meta-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .work-meta .t { font-family: var(--mono); font-size: clamp(14px, 1.4vw, 17px); font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
   .work-card:hover .work-meta .t { text-decoration: underline; }
-  .work-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+  .work-tags { display: flex; gap: 6px; flex-wrap: wrap; }
   .work-tags .tag { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line); padding: 4px 9px; white-space: nowrap; transition: color .25s, border-color .25s; }
   .work-card:hover .work-tags .tag { color: var(--ink); border-color: var(--ink); }
-  .work-meta .s { display: inline; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 0; }
-  .work-meta .s::before { content: "·"; color: var(--line-mid); margin: 0 8px; font-weight: 500; }
+  .work-meta .s { display: block; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 8px; }
   .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
 
   /* ---------- locked + coming-soon cards ---------- */
@@ -160,6 +160,7 @@
     <div class="nav-links" data-spy>
       <a href="index.html" class="active" data-nav="home">Home</a>
       <a href="#work" data-nav="works">Works</a>
+      <a href="careers.html" data-nav="careers">Careers</a>
       <a href="contact-us.html" data-nav="contact">Contact</a>
     </div>
     <div class="nav-cta">
@@ -171,6 +172,7 @@
 <div class="mobile-menu">
   <a href="index.html" class="active">Home</a>
   <a href="#work">Works</a>
+  <a href="careers.html">Careers</a>
   <a href="contact-us.html">Contact</a>
   <div class="mm-foot">
     <a href="https://x.com/postmilane">Twitter</a>
@@ -256,14 +258,14 @@
       <a href="work/blend-app.html" class="work-card reveal">
         <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/blend/01-wordmark.png') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
         <div class="work-meta">
-          <div>
+          <div class="meta-top">
             <div class="t">Blend</div>
-            <div class="s">Relationship app</div>
             <div class="work-tags">
               <span class="tag">Brand Identity</span>
               <span class="tag">App</span>
             </div>
           </div>
+          <div class="s">Relationship app</div>
         </div>
       </a>
       <a href="work/middlewarehq.html" class="work-card reveal" data-d="1">
@@ -271,40 +273,40 @@
           <div class="ph" data-label="" style="background:url('assets/images/middleware/middleware-hero.png?v=2') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
         </div>
         <div class="work-meta">
-          <div>
+          <div class="meta-top">
             <div class="t">Middleware</div>
-            <div class="s">Engineering platform</div>
             <div class="work-tags">
               <span class="tag">Website</span>
               <span class="tag">App</span>
             </div>
           </div>
+          <div class="s">Engineering platform</div>
         </div>
       </a>
       <a href="work/agentcargo.html" class="work-card reveal">
         <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/agentcargo/01-hero.png') right center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
         <div class="work-meta">
-          <div>
+          <div class="meta-top">
             <div class="t">Agent Cargo</div>
-            <div class="s">AI agents for shipping</div>
             <div class="work-tags">
               <span class="tag">Brand Identity</span>
               <span class="tag">App</span>
               <span class="tag">Website</span>
             </div>
           </div>
+          <div class="s">AI agents for shipping</div>
         </div>
       </a>
       <a href="work/brace.html" class="work-card reveal" data-d="1">
         <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/brace/01-hero.png') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
         <div class="work-meta">
-          <div>
+          <div class="meta-top">
             <div class="t">Brace</div>
-            <div class="s">D2C clothing label</div>
             <div class="work-tags">
               <span class="tag">Brand Identity</span>
             </div>
           </div>
+          <div class="s">D2C clothing label</div>
         </div>
       </a>
     </div>
@@ -444,6 +446,7 @@
         <h4>Navigate</h4>
         <a href="index.html">Home</a>
         <a href="#work">Works</a>
+        <a href="careers.html">Careers</a>
         <a href="contact-us.html">Contact</a>
       </div>
       <div class="foot-col">
