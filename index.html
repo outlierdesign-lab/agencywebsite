@@ -80,12 +80,13 @@
   .work-card:hover .frame { border-color: var(--ink); }
   .work-card:hover .frame .ph { transform: scale(1.03); filter: grayscale(0); }
   .work-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 16px; }
-  .work-meta .t { font-family: var(--mono); font-size: clamp(14px, 1.4vw, 17px); font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .work-meta .t { display: inline; font-family: var(--mono); font-size: clamp(14px, 1.4vw, 17px); font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
   .work-card:hover .work-meta .t { text-decoration: underline; }
   .work-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
   .work-tags .tag { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line); padding: 4px 9px; white-space: nowrap; transition: color .25s, border-color .25s; }
   .work-card:hover .work-tags .tag { color: var(--ink); border-color: var(--ink); }
-  .work-meta .s { color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 5px; }
+  .work-meta .s { display: inline; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 0; }
+  .work-meta .s::before { content: "·"; color: var(--line-mid); margin: 0 8px; font-weight: 500; }
   .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
 
   /* ---------- locked + coming-soon cards ---------- */
