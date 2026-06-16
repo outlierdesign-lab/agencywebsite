@@ -1,4 +1,4 @@
-/* Outlier Labs — shared interactions */
+/* Outliers at Play — shared interactions */
 (function () {
   // ---- nav scroll state ----
   const nav = document.querySelector('.nav');

@@ -15,7 +15,7 @@ static content as a fallback, so nothing breaks in the meantime.
 
 ## 1. Create a Sanity project
 1. Go to **https://www.sanity.io/manage** and sign up / log in (free).
-2. Create a **new project**. Name it "Outlier Labs". Use the default dataset **`production`**.
+2. Create a **new project**. Name it "Outliers at Play". Use the default dataset **`production`**.
 3. Copy the **Project ID** (looks like `a1b2c3d4`).
 
 ## 2. Paste the Project ID in 3 places
