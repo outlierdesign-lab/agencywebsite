@@ -70,34 +70,39 @@
     setTimeout(() => { pending.forEach(show); pending = []; }, 1200);
   }
 
-  // ---- manifesto: scroll-scrubbed sentence reveal + closing attribution ----
+  // ---- manifesto: scroll-scrubbed word reveal + closing attribution ----
   const manifesto = document.querySelector('[data-manifesto]');
   const manifestoText = document.querySelector('[data-manifesto-text]');
   if (manifesto && manifestoText) {
-    const sentences = Array.from(manifestoText.querySelectorAll('.s'));
+    const raw = manifestoText.textContent.trim();
+    const tokens = raw.split(/(\s+)/);
+    manifestoText.innerHTML = tokens
+      .map(t => /^\s+$/.test(t) ? t : `<span class="w">${t}</span>`)
+      .join('');
+    const words = manifestoText.querySelectorAll('.w');
+    const total = words.length;
     const attrEl = document.querySelector('[data-manifesto-attr]');
-    const stages = sentences.length + (attrEl ? 1 : 0);
 
     let ticking = false;
-    let lastStage = -1;
+    let lastReveal = -1;
     const update = () => {
       ticking = false;
       const rect = manifesto.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
       const travel = rect.height - vh;
-      let stage;
+      let reveal;
       if (travel <= 0) {
-        stage = stages;
+        reveal = total;
       } else {
         const p = Math.max(0, Math.min(1, -rect.top / travel));
-        // buffer 6% head / 10% tail so the last sentence + attribution sit on screen briefly
-        const eased = Math.max(0, Math.min(1, (p - 0.06) / 0.84));
-        stage = Math.min(stages, Math.floor(eased * stages + 0.001));
+        // head/tail buffer so first/last word don't pop at the very edges
+        const eased = Math.max(0, Math.min(1, (p - 0.04) / 0.84));
+        reveal = Math.round(eased * total);
       }
-      if (stage === lastStage) return;
-      lastStage = stage;
-      sentences.forEach((s, i) => s.classList.toggle('on', i < stage));
-      if (attrEl) attrEl.classList.toggle('on', stage > sentences.length);
+      if (reveal === lastReveal) return;
+      lastReveal = reveal;
+      words.forEach((w, i) => w.classList.toggle('on', i < reveal));
+      if (attrEl) attrEl.classList.toggle('on', reveal >= total);
     };
     const onScroll = () => {
       if (ticking) return;
