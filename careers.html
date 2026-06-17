@@ -27,11 +27,12 @@
   .page-hero .lead { margin-top: 24px; max-width: 50ch; }
 
   .careers-wrap { padding-bottom: clamp(60px, 10vw, 130px); }
-  .job { padding-block: clamp(34px, 5vw, 60px); border-top: 1px solid var(--line); }
-  .job-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+  .job-list { display: flex; flex-direction: column; gap: clamp(20px, 2.5vw, 28px); }
+  .job { padding: clamp(28px, 4vw, 48px); border: 1px solid var(--line); background: var(--bg-2); transition: border-color .25s var(--ease), background .25s var(--ease); }
+  .job:hover { border-color: var(--line-mid); background: var(--paper); }
+  .job-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: clamp(24px, 3vw, 36px); }
   .job-head h2 { font-family: var(--pixel); font-weight: 600; font-size: clamp(22px, 3vw, 32px); line-height: 1.1; text-transform: uppercase; letter-spacing: 0.01em; color: var(--ink); }
-  .job-type { font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line); padding: 5px 10px; white-space: nowrap; }
-  .job-lead { font-family: var(--mono); font-size: clamp(14px, 1.5vw, 17px); line-height: 1.6; color: var(--ink); max-width: 62ch; margin-bottom: clamp(24px, 3vw, 36px); }
+  .job-type { font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line-mid); padding: 5px 10px; white-space: nowrap; background: var(--paper); }
   .job-cols { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 64px); margin-bottom: clamp(28px, 3.5vw, 40px); }
   .job-cols h4 { font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 16px; }
   .job-cols ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
@@ -80,12 +81,12 @@
 <section class="careers-wrap">
   <div class="wrap">
 
+    <div class="job-list">
     <article class="job reveal">
       <div class="job-head">
         <h2>Brand Identity Designer</h2>
         <span class="job-type">Full-time</span>
       </div>
-      <p class="job-lead">Lead brand engagements for tech and D2C founders. From a single brief to a full identity system the client can keep extending without losing the through-line.</p>
 
       <div class="job-cols">
         <div>
@@ -118,7 +119,6 @@
         <h2>Interaction Design Intern</h2>
         <span class="job-type">Internship · 3–6 months</span>
       </div>
-      <p class="job-lead">Work alongside the team on product, visual and UX surfaces — across UI/UX, visual design and brand. Real shipping work, not coffee runs.</p>
 
       <div class="job-cols">
         <div>
@@ -145,6 +145,7 @@
         <a href="mailto:milanvermadesign@gmail.com?subject=Application%20%E2%80%94%20Interaction%20Design%20Intern" class="btn btn-primary">Apply by email <span class="arrow">↗</span></a>
       </div>
     </article>
+    </div>
 
     <p class="careers-note">
       Don't see a role that fits? <strong>Email us anyway.</strong> If your work is sharp and your interests line up, we'll find a way — most of our team didn't apply through an open posting.
