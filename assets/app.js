@@ -70,6 +70,42 @@
     setTimeout(() => { pending.forEach(show); pending = []; }, 1200);
   }
 
+  // ---- manifesto: scroll-scrubbed word reveal ----
+  const manifesto = document.querySelector('[data-manifesto]');
+  const manifestoText = document.querySelector('[data-manifesto-text]');
+  if (manifesto && manifestoText) {
+    // wrap each whitespace-separated word in a span (preserve em-dash as its own token)
+    const raw = manifestoText.textContent.trim();
+    const tokens = raw.split(/(\s+)/);
+    manifestoText.innerHTML = tokens
+      .map(t => /^\s+$/.test(t) ? t : `<span class="w">${t}</span>`)
+      .join('');
+    const words = manifestoText.querySelectorAll('.w');
+
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const rect = manifesto.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const travel = rect.height - vh;
+      if (travel <= 0) { words.forEach(w => w.classList.add('on')); return; }
+      // raw progress: 0 when section top hits viewport top, 1 when section bottom hits viewport bottom
+      const p = Math.max(0, Math.min(1, -rect.top / travel));
+      // 8% head/tail buffer so the first/last word doesn't pop at the very edges
+      const eased = Math.max(0, Math.min(1, (p - 0.08) / 0.84));
+      const reveal = Math.round(eased * words.length);
+      words.forEach((w, i) => w.classList.toggle('on', i < reveal));
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  }
+
   // ---- FAQ accordion ----
   document.querySelectorAll('[data-faq]').forEach(item => {
     const q = item.querySelector('.faq-q');
