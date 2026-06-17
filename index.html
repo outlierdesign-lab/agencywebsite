@@ -36,15 +36,22 @@
 
   /* ---------- manifesto (scroll-scrubbed reveal) ---------- */
   .manifesto { position: relative; background: var(--night); color: var(--night-ink); overflow: hidden; }
+  /* layered ambient: pixel dot-grid + soft spotlight, masked top/bottom */
   .manifesto::before {
-    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .55;
+    content: ''; position: absolute; inset: 0; pointer-events: none;
     background-image:
-      radial-gradient(circle at 20% 10%, rgba(255,255,255,0.04), transparent 55%),
-      radial-gradient(circle at 80% 90%, rgba(255,255,255,0.03), transparent 50%),
-      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px);
-    background-size: auto, auto, 100% 38px;
+      radial-gradient(ellipse at 50% 45%, rgba(255,255,255,0.06), transparent 60%),
+      radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1.4px);
+    background-size: auto, 22px 22px;
+    background-position: 0 0, 0 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
   }
-  .manifesto-stage { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: clamp(80px, 11vw, 140px) clamp(24px, 7vw, 96px); }
+  .manifesto-stage {
+    position: sticky; top: 0; height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: clamp(80px, 11vw, 140px) clamp(24px, 7vw, 96px);
+  }
   .manifesto-eyebrow {
     font-family: var(--pixel); font-size: 11px; font-weight: 500;
     letter-spacing: 0.22em; text-transform: uppercase;
@@ -60,24 +67,21 @@
     line-height: 1.18; letter-spacing: -0.018em;
     max-width: 19ch; color: var(--night-ink);
   }
-  .manifesto-text .w {
-    display: inline-block; opacity: 0.12; transform: translateY(6px);
-    transition: opacity .35s cubic-bezier(0.22, 1, 0.36, 1), transform .45s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
+  .manifesto-text .s {
+    display: inline; opacity: 0.10;
+    transition: opacity .7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity;
   }
-  .manifesto-text .w.on { opacity: 1; transform: translateY(0); }
-  .manifesto-text .w.frontier { position: relative; }
-  .manifesto-text .w.frontier::after {
-    content: '▍'; position: absolute; right: -0.45em; top: 0; color: var(--night-ink);
-    animation: m-blink 1s steps(2) infinite; font-weight: 400;
+  .manifesto-text .s.on { opacity: 1; }
+  .manifesto-attr {
+    display: block; margin-top: clamp(28px, 4vw, 48px);
+    font-family: var(--pixel); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--night-soft);
+    opacity: 0; transform: translateY(8px);
+    transition: opacity .55s ease-out, transform .55s ease-out;
   }
-  .manifesto-meter {
-    position: absolute; bottom: clamp(28px, 4vw, 48px); left: clamp(24px, 7vw, 96px);
-    font-family: var(--pixel); font-size: 11px; letter-spacing: 0.16em;
-    color: var(--night-faint); display: inline-flex; align-items: center; gap: 12px;
-  }
-  .manifesto-meter b { color: var(--night-ink); font-weight: 500; }
-  @keyframes m-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  .manifesto-attr.on { opacity: 1; transform: translateY(0); }
   @media (max-width: 720px) {
     .manifesto-text { font-size: clamp(28px, 8vw, 40px); max-width: 18ch; line-height: 1.22; }
     .manifesto-eyebrow { margin-bottom: 24px; }
@@ -265,11 +269,11 @@
 </section>
 
 <!-- MANIFESTO -->
-<section class="manifesto band-dark" id="manifesto" data-manifesto style="height: 170vh;">
+<section class="manifesto band-dark" id="manifesto" data-manifesto style="height: 180vh;">
   <div class="manifesto-stage">
-    <span class="manifesto-eyebrow">01 — Manifesto</span>
-    <p class="manifesto-text" data-manifesto-text>People decide in seconds. Before they read a word, before they click anything — they've already felt something. Great design controls what that feeling is.</p>
-    <span class="manifesto-meter"><span data-manifesto-count>00</span> / <b data-manifesto-total>00</b></span>
+    <span class="manifesto-eyebrow">Manifesto</span>
+    <p class="manifesto-text" data-manifesto-text><span class="s">People decide in seconds.</span> <span class="s">Before they read a word, before they click anything — they've already felt something.</span> <span class="s">Great design controls what that feeling is.</span></p>
+    <span class="manifesto-attr" data-manifesto-attr>— Outliers at Play.</span>
   </div>
 </section>
 

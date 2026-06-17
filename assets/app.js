@@ -70,45 +70,34 @@
     setTimeout(() => { pending.forEach(show); pending = []; }, 1200);
   }
 
-  // ---- manifesto: scroll-scrubbed word reveal ----
+  // ---- manifesto: scroll-scrubbed sentence reveal + closing attribution ----
   const manifesto = document.querySelector('[data-manifesto]');
   const manifestoText = document.querySelector('[data-manifesto-text]');
   if (manifesto && manifestoText) {
-    const raw = manifestoText.textContent.trim();
-    const tokens = raw.split(/(\s+)/);
-    manifestoText.innerHTML = tokens
-      .map(t => /^\s+$/.test(t) ? t : `<span class="w">${t}</span>`)
-      .join('');
-    const words = manifestoText.querySelectorAll('.w');
-    const total = words.length;
-    const meterCount = document.querySelector('[data-manifesto-count]');
-    const meterTotal = document.querySelector('[data-manifesto-total]');
-    const pad = (n) => String(n).padStart(2, '0');
-    if (meterTotal) meterTotal.textContent = pad(total);
+    const sentences = Array.from(manifestoText.querySelectorAll('.s'));
+    const attrEl = document.querySelector('[data-manifesto-attr]');
+    const stages = sentences.length + (attrEl ? 1 : 0);
 
     let ticking = false;
-    let lastReveal = -1;
+    let lastStage = -1;
     const update = () => {
       ticking = false;
       const rect = manifesto.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
       const travel = rect.height - vh;
-      let reveal;
+      let stage;
       if (travel <= 0) {
-        reveal = total;
+        stage = stages;
       } else {
         const p = Math.max(0, Math.min(1, -rect.top / travel));
-        // tighter buffers (4% head, 8% tail) → faster reveal
-        const eased = Math.max(0, Math.min(1, (p - 0.04) / 0.88));
-        reveal = Math.round(eased * total);
+        // buffer 6% head / 10% tail so the last sentence + attribution sit on screen briefly
+        const eased = Math.max(0, Math.min(1, (p - 0.06) / 0.84));
+        stage = Math.min(stages, Math.floor(eased * stages + 0.001));
       }
-      if (reveal === lastReveal) return;
-      lastReveal = reveal;
-      words.forEach((w, i) => {
-        w.classList.toggle('on', i < reveal);
-        w.classList.toggle('frontier', reveal > 0 && reveal < total && i === reveal - 1);
-      });
-      if (meterCount) meterCount.textContent = pad(reveal);
+      if (stage === lastStage) return;
+      lastStage = stage;
+      sentences.forEach((s, i) => s.classList.toggle('on', i < stage));
+      if (attrEl) attrEl.classList.toggle('on', stage > sentences.length);
     };
     const onScroll = () => {
       if (ticking) return;
