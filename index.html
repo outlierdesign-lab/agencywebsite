@@ -127,7 +127,7 @@
   .work { padding-block: clamp(50px, 8vw, 110px); }
   .work-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(30px, 5vw, 52px); flex-wrap: wrap; }
   .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(28px, 3.5vw, 44px) clamp(20px, 2.4vw, 30px); }
-  .work-card { display: block; }
+  .work-card { display: block; pointer-events: none; cursor: default; }
   .work-card .frame { aspect-ratio: 4 / 3; position: relative; overflow: hidden; background: #fafafa; border: 1px solid var(--line); transition: border-color .3s; }
   .work-card .frame .ph { position: absolute; inset: 0; border: none; filter: grayscale(1); transition: transform .9s var(--ease), filter .55s var(--ease); }
   .work-card:hover .frame { border-color: var(--ink); }
@@ -346,7 +346,7 @@
         </div>
       </a>
       <a href="work/agentcargo.html" class="work-card reveal">
-        <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/agentcargo/01-hero.png') right center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
+        <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/agentcargo/01-hero.png') right center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px); transform: scale(1.3); transform-origin: right center;"></div></div>
         <div class="work-meta">
           <div class="meta-top">
             <div class="t">Agent Cargo</div>
