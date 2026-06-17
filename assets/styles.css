@@ -68,7 +68,8 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* clip (not hidden) so we don't kill position:sticky for descendants */
+  overflow-x: clip;
 }
 
 ::selection { background: var(--ink); color: var(--paper); }

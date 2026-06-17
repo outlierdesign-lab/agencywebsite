@@ -35,7 +35,7 @@
   .hero-image { width: 100%; aspect-ratio: 4 / 5; border: none; background: var(--paper); background-size: cover; background-position: center; background-repeat: no-repeat; }
 
   /* ---------- manifesto (scroll-scrubbed reveal) ---------- */
-  .manifesto { position: relative; background: var(--night); color: var(--night-ink); overflow: hidden; }
+  .manifesto { position: relative; background: var(--night); color: var(--night-ink); }
   /* layered ambient: pixel dot-grid + soft spotlight, masked top/bottom */
   .manifesto::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
@@ -68,7 +68,7 @@
     max-width: 19ch; color: var(--night-ink);
   }
   .manifesto-text .s {
-    display: inline; opacity: 0.10;
+    display: inline; opacity: 0.16;
     transition: opacity .7s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity;
   }
