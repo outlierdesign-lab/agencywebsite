@@ -150,6 +150,18 @@
     window.addEventListener('resize', () => go(i));
   }
 
+  // ---- email obfuscation: assemble mailto + visible text from data-mail ----
+  document.querySelectorAll('[data-mail]').forEach(el => {
+    const parts = (el.dataset.mail || '').split('|');
+    if (parts.length < 3) return;
+    const addr = parts[0] + '@' + parts[1] + '.' + parts[2];
+    if (el.tagName === 'A') {
+      const subj = el.dataset.mailSubject ? '?subject=' + encodeURIComponent(el.dataset.mailSubject) : '';
+      el.setAttribute('href', 'mailto:' + addr + subj);
+    }
+    if (el.hasAttribute('data-mail-show')) el.textContent = addr;
+  });
+
   // ---- year ----
   document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 
