@@ -79,7 +79,7 @@
   }
   function notice(msg) {
     return '<header class="cs-hero"><div class="wrap">' +
-      '<a href="../index.html#work" class="cs-back btn">← Back to all works</a>' +
+      '<a href="/#work" class="cs-back btn">← Back to all works</a>' +
       '<p class="tagline" style="margin-top:30px">' + esc(msg) + '</p></div></header>';
   }
 
@@ -90,7 +90,7 @@
       metaItem('Client', p.client) + metaItem('Services', p.services) +
       metaItem(p.stage ? 'Stage' : 'Timeline', p.stage || p.timeline) + metaItem('Year', p.year) + '</div>';
     var hero = '<header class="cs-hero"><div class="wrap">' +
-      '<a href="../index.html#work" class="cs-back btn reveal">← Back to all works</a>' +
+      '<a href="/#work" class="cs-back btn reveal">← Back to all works</a>' +
       kicker +
       '<h1 class="reveal">' + esc(p.title) + '</h1>' +
       (p.tagline ? '<p class="tagline reveal">' + esc(p.tagline) + '</p>' : '') +
