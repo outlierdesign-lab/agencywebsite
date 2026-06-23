@@ -1,4 +1,4 @@
-/* Outliers at Play — Sanity content renderer (runtime, no build step).
+/* Outliers at Play · Sanity content renderer (runtime, no build step).
    Renders the Works grid (#work-grid) and case-study pages (#cs-root).
    If the CMS isn't configured yet, the grid keeps its static fallback markup. */
 (function () {
@@ -139,7 +139,7 @@
       if (idx < 0) { root.innerHTML = notice('Project not found.'); return; }
       var p = list[idx];
       var next = list.length > 1 ? list[(idx + 1) % list.length] : null;
-      document.title = p.title + ' — Case Study · Outliers at Play';
+      document.title = p.title + ' · Case Study · Outliers at Play';
       root.innerHTML = caseHTML(p, next);
       reveal(root);
     }).catch(function () {
