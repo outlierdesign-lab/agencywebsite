@@ -1,6 +1,6 @@
 @import url('https://fonts.bunny.net/css?family=space-grotesk:300,400,500,600&display=swap');
 
-/* Primary display font — Departure Mono (monospaced pixel font by Helena Zhang,
+/* Primary display font: Departure Mono (monospaced pixel font by Helena Zhang,
    the typeface used on kaisermann.me). Single master mapped across all weights
    so the pixel glyphs never get faux-bolded. */
 @font-face {
@@ -12,7 +12,7 @@
 }
 
 /* ============================================================
-   Outliers at Play — minimal pixel design system
+   Outliers at Play · minimal pixel design system
    White paper · black inverted bands · pixel display + mono body
    ============================================================ */
 
@@ -165,7 +165,7 @@ h1, h2, h3, h4 { font-family: var(--pixel); font-weight: 600; line-height: 1.06;
 .mobile-menu .mm-foot a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
 
 /* ---------- reveal ---------- */
-/* NOTE: never transition opacity — this webview freezes CSS transitions, which
+/* NOTE: never transition opacity, this webview freezes CSS transitions, which
    would leave content stuck at opacity 0. app.js sets inline opacity:1 instantly. */
 .reveal { opacity: 0; transform: translateY(8px); transition: transform .7s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
@@ -208,6 +208,13 @@ h1, h2, h3, h4 { font-family: var(--pixel); font-weight: 600; line-height: 1.06;
 .cta-card .eyebrow { color: var(--night-faint); }
 .cta-card .eyebrow::before { background: var(--night-ink); }
 .cta-card h2 { max-width: 22ch; margin-inline: auto; color: var(--night-ink); }
+.cta-card h2.cta-headline {
+  max-width: none;
+  margin-top: 18px;
+  font-size: clamp(11px, 2.4vw, 26px);
+  line-height: 1.25;
+  white-space: nowrap;
+}
 .cta-mail {
   display: inline-block; margin-top: 26px; font-family: var(--mono);
   font-size: clamp(14px, 1.8vw, 18px); font-weight: 500; letter-spacing: 0.02em;
@@ -240,7 +247,7 @@ h1, h2, h3, h4 { font-family: var(--pixel); font-weight: 600; line-height: 1.06;
 .cs-kicker { display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
 .cs-kicker > span:first-child, .cs-kicker .step { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--faint); white-space: nowrap; }
 .cs-kicker .fund { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); white-space: nowrap; padding: 0; background: none; border-radius: 0; margin-left: 20px; }
-.cs-kicker .fund::before { content: "—"; color: var(--line-mid); margin-right: 14px; }
+.cs-kicker .fund::before { content: "·"; color: var(--line-mid); margin-right: 14px; }
 .cs-hero h1 { font-family: var(--pixel); font-weight: 600; font-size: clamp(28px, 4.6vw, 50px); line-height: 1.04; letter-spacing: 0.005em; margin: 22px 0 18px; }
 .cs-hero .tagline { font-family: var(--mono); font-size: 14px; line-height: 1.65; color: var(--ink-soft); max-width: 52ch; }
 
@@ -261,7 +268,7 @@ h1, h2, h3, h4 { font-family: var(--pixel); font-weight: 600; line-height: 1.06;
 .cs-rich strong { color: var(--ink); font-weight: 600; }
 .cs-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
 .cs-list li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; color: var(--ink-soft); font-size: 13px; line-height: 1.6; }
-.cs-list li::before { content: "—"; color: var(--ink); }
+.cs-list li::before { content: "›"; color: var(--ink); }
 
 .cs-gallery { padding-block: clamp(14px, 2.5vw, 26px); display: grid; gap: clamp(14px, 2vw, 20px); }
 .cs-gallery.two { grid-template-columns: 1fr 1fr; }

@@ -1,4 +1,4 @@
-/* Outliers at Play — shared interactions */
+/* Outliers at Play · shared interactions */
 (function () {
   // ---- nav scroll state ----
   const nav = document.querySelector('.nav');
@@ -212,7 +212,7 @@
   });
   sync();
 
-  // host protocol — listener first, then announce
+  // host protocol: listener first, then announce
   window.addEventListener('message', (e) => {
     const t = e.data && e.data.type;
     if (t === '__activate_edit_mode') { panel.classList.add('open'); sync(); }
