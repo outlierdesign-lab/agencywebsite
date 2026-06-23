@@ -126,6 +126,25 @@
   /* ---------- work ---------- */
   .work { padding-block: clamp(50px, 8vw, 110px); }
   .work-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(30px, 5vw, 52px); flex-wrap: wrap; }
+  .work-soon-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 16px;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .work-soon-tag::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--ink); opacity: 0.55;
+    animation: workSoonPulse 1.6s ease-in-out infinite;
+  }
+  @keyframes workSoonPulse {
+    0%, 100% { opacity: 0.25; transform: scale(1); }
+    50%      { opacity: 0.85; transform: scale(1.25); }
+  }
   .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(28px, 3.5vw, 44px) clamp(20px, 2.4vw, 30px); }
   .work-card { display: block; pointer-events: none; cursor: default; }
   .work-card .frame { aspect-ratio: 4 / 3; position: relative; overflow: hidden; background: #fafafa; border: 1px solid var(--line); transition: border-color .3s; }
@@ -310,7 +329,8 @@
     <div class="work-head">
       <div class="section-head reveal">
         <span class="eyebrow">Selected Work</span>
-        <h2 class="h2">A few of the launches<br />we've shipped — fast.</h2>
+        <h2 class="h2">A few of our<br />most proud work.</h2>
+        <span class="work-soon-tag">Full case studies — coming soon</span>
       </div>
       <a data-mail="hello|outliersatplay|com" class="btn btn-ghost reveal" data-d="1">Start yours <span class="arrow">↗</span></a>
     </div>
@@ -377,7 +397,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">What we do</span>
-      <h2 class="h2">Everything you need to ship<br />— under one roof.</h2>
+      <h2 class="h2">Everything you need to launch<br />your brand — under one roof.</h2>
     </div>
     <div class="svc-grid">
       <div class="svc reveal">
@@ -463,19 +483,19 @@
       <div class="faq-list reveal" data-d="1">
         <div class="faq-item" data-faq>
           <button class="faq-q">How fast can you actually ship? <span class="ind"></span></button>
-          <div class="faq-a"><p>First meaningful version in 7–14 days. Full product or brand work in 3–6 weeks, depending on scope. We work in tight weekly cycles so you're seeing progress every Friday — not waiting for one big reveal in week six.</p></div>
+          <div class="faq-a"><p>A first meaningful version lands in 7–14 days, with full brand or product work wrapping in 3–6 weeks. We move in tight weekly cycles, so you're seeing real progress every Friday — never a six-week black box.</p></div>
         </div>
         <div class="faq-item" data-faq>
-          <button class="faq-q">What's actually included? <span class="ind"></span></button>
-          <div class="faq-a"><p>Strategy, design, brand direction and build-ready front-end handoff. You get source files, a documented design system and direct access to the team. No hidden add-ons, no surprise invoices.</p></div>
+          <button class="faq-q">Doesn't moving this fast hurt the quality? <span class="ind"></span></button>
+          <div class="faq-a"><p>The opposite, in our experience. Speed forces clarity — fewer rounds of second-guessing, fewer committees, more decisions that hold up. We've shipped this way for eight years; the bar gets higher, not lower.</p></div>
         </div>
         <div class="faq-item" data-faq>
-          <button class="faq-q">Unlimited revisions — really? <span class="ind"></span></button>
-          <div class="faq-a"><p>Yes. Within an active engagement we iterate until the work is right, not just delivered. We don't ship "good enough" and call it done.</p></div>
+          <button class="faq-q">What does "quality" actually look like here? <span class="ind"></span></button>
+          <div class="faq-a"><p>Work that survives investor scrutiny, looks right on a real device and still feels considered six months later. Every pixel, word and interaction has a reason — nothing on the page because it was easy to add.</p></div>
         </div>
         <div class="faq-item" data-faq>
-          <button class="faq-q">Can you handle something outside your usual scope? <span class="ind"></span></button>
-          <div class="faq-a"><p>Often, yes — most of our favourite work started as an unusual brief. Tell us what you're building and we'll scope around your timeline and budget.</p></div>
+          <button class="faq-q">How do you keep the bar high under pressure? <span class="ind"></span></button>
+          <div class="faq-a"><p>Small, senior team. No juniors learning on your runway, no handoffs to a third agency. The people you meet on day one are the ones designing, deciding and shipping — which is why the quality doesn't drop when the deadline does.</p></div>
         </div>
       </div>
     </div>
@@ -486,8 +506,8 @@
 <section class="cta">
   <div class="wrap">
     <div class="cta-card reveal">
-      <span class="eyebrow" style="justify-content:center;">Let's ship something</span>
-      <h2 class="h2" style="margin-top:18px;">Building something?<br />Let's not waste your runway.</h2>
+      <span class="eyebrow" style="justify-content:center;">Building something?</span>
+      <h2 class="h2" style="margin-top:18px;">You get only one shot at<br />launching right — we make sure you do.</h2>
       <a data-mail="hello|outliersatplay|com" data-mail-show class="cta-mail">hello [at] outliersatplay [dot] com</a>
     </div>
   </div>
