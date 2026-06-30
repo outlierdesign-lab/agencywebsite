@@ -146,7 +146,7 @@
     50%      { opacity: 0.85; transform: scale(1.25); }
   }
   .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(28px, 3.5vw, 44px) clamp(20px, 2.4vw, 30px); }
-  .work-card { display: block; pointer-events: none; cursor: default; }
+  .work-card { display: block; }
   .work-card .frame { aspect-ratio: 4 / 3; position: relative; overflow: hidden; background: #fafafa; border: 1px solid var(--line); transition: border-color .3s; }
   .work-card .frame .ph { position: absolute; inset: 0; border: none; filter: grayscale(1); transition: transform .9s var(--ease), filter .55s var(--ease); }
   .work-card:hover .frame { border-color: var(--ink); }
@@ -161,32 +161,6 @@
   .work-meta .s { display: block; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 8px; }
   .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
 
-  /* ---------- locked + coming-soon cards ---------- */
-  .work-card.is-locked, .work-card.is-soon { cursor: default; }
-  .work-card.is-locked:hover .frame, .work-card.is-soon:hover .frame { border-color: var(--line); }
-  .work-card.is-locked:hover .frame .ph, .work-card.is-soon:hover .frame .ph { transform: none; }
-  .work-card.is-locked:hover .work-meta .t, .work-card.is-soon:hover .work-meta .t { text-decoration: none; }
-  .card-overlay { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; }
-  .work-card.is-locked .card-overlay {
-    background: rgba(20,20,20,0.42); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
-    color: var(--paper); gap: 10px;
-    font-family: var(--mono); font-size: 11px; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase;
-  }
-  .work-card.is-locked .card-overlay svg { width: 14px; height: 14px; }
-  .work-card.is-soon .card-overlay {
-    flex-direction: column; gap: 12px;
-    background: var(--night); color: var(--night-ink);
-    text-align: center; padding: 24px;
-  }
-  .work-card.is-soon .card-overlay .label {
-    font-family: var(--pixel); font-size: clamp(22px, 3.4vw, 34px); font-weight: 600;
-    letter-spacing: 0.04em; text-transform: uppercase; line-height: 1;
-  }
-  .work-card.is-soon .card-overlay .sub {
-    font-family: var(--mono); font-size: 10.5px; font-weight: 500;
-    letter-spacing: 0.18em; text-transform: uppercase; color: var(--night-soft);
-  }
 
   /* ---------- services ---------- */
   .services { padding-block: clamp(50px, 8vw, 110px); }
@@ -348,7 +322,7 @@
           <div class="s">Relationship app</div>
         </div>
       </a>
-      <a href="work/middlewarehq.html" class="work-card reveal" data-d="1">
+      <a href="https://middlewarehq.com" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-d="1">
         <div class="frame">
           <div class="ph" data-label="" style="background:url('assets/images/middleware/middleware-hero.png?v=2') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
         </div>
