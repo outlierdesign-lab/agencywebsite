@@ -160,6 +160,18 @@
   .work-card:hover .work-tags .tag { color: var(--ink); border-color: var(--ink); }
   .work-meta .s { display: block; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 8px; }
   .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+  /* coming-soon variant — no hover, no click, small badge */
+  .work-card.is-soon { cursor: default; }
+  .work-card.is-soon:hover .frame { border-color: var(--line); }
+  .work-card.is-soon:hover .frame .ph { transform: none; filter: grayscale(1); }
+  .work-card.is-soon:hover .work-meta .t { text-decoration: none; }
+  .work-card.is-soon:hover .work-tags .tag { color: var(--ink-soft); border-color: var(--line); }
+  .card-soon-badge {
+    position: absolute; top: 12px; right: 12px; z-index: 2;
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink);
+    background: var(--paper); padding: 5px 10px; border: 1px solid var(--line-mid);
+  }
 
 
   /* ---------- services ---------- */
@@ -309,17 +321,17 @@
       <a data-mail="hello|outliersatplay|com" class="btn btn-ghost reveal" data-d="1">Start yours <span class="arrow">↗</span></a>
     </div>
     <div class="work-grid" id="work-grid">
-      <a href="work/blend-app.html" class="work-card reveal">
-        <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/blend/01-wordmark.png') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
+      <a href="work/agentcargo.html" class="work-card reveal">
+        <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/agentcargo/thumb.jpg') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
         <div class="work-meta">
           <div class="meta-top">
-            <div class="t">Blend</div>
+            <div class="t">Agent Cargo</div>
             <div class="work-tags">
-              <span class="tag">Brand Identity</span>
               <span class="tag">App</span>
+              <span class="tag">Pitch Decks</span>
             </div>
           </div>
-          <div class="s">Relationship app</div>
+          <div class="s">AI agents for shipping</div>
         </div>
       </a>
       <a href="https://middlewarehq.com" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-d="1">
@@ -334,24 +346,27 @@
               <span class="tag">App</span>
             </div>
           </div>
-          <div class="s">Engineering platform</div>
+          <div class="s">Productivity for devs and leaders</div>
         </div>
       </a>
-      <a href="work/agentcargo.html" class="work-card reveal">
-        <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/agentcargo/thumb.jpg') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
+      <a href="work/blend-app.html" class="work-card reveal">
+        <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/blend/01-wordmark.png') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
         <div class="work-meta">
           <div class="meta-top">
-            <div class="t">Agent Cargo</div>
+            <div class="t">Blend</div>
             <div class="work-tags">
+              <span class="tag">Brand Identity</span>
               <span class="tag">App</span>
-              <span class="tag">Pitch Decks</span>
             </div>
           </div>
-          <div class="s">AI agents for shipping</div>
+          <div class="s">Relationship app</div>
         </div>
       </a>
-      <a href="work/brace.html" class="work-card reveal" data-d="1">
-        <div class="frame"><div class="ph" data-label="" style="background:url('assets/images/brace/01-hero.png') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div></div>
+      <div class="work-card is-soon reveal" data-d="1" aria-label="Brace — coming soon">
+        <div class="frame">
+          <span class="card-soon-badge">Coming Soon</span>
+          <div class="ph" data-label="" style="background:url('assets/images/brace/01-hero.png') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
+        </div>
         <div class="work-meta">
           <div class="meta-top">
             <div class="t">Brace</div>
@@ -359,9 +374,9 @@
               <span class="tag">Brand Identity</span>
             </div>
           </div>
-          <div class="s">D2C clothing label</div>
+          <div class="s">Clothing brand</div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
