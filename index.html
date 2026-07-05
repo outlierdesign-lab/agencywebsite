@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Outliers at Play · We build brands and products that are loved</title>
+<title>Outliers at Play · Design at founder speed</title>
 <meta name="description" content="A design studio for tech and D2C founders. Brands, websites and apps shipped at founder speed." />
 
 <!-- Favicon (browser tab) -->
@@ -13,14 +13,14 @@
 
 <!-- Social preview (WhatsApp, Slack, Twitter, LinkedIn, iMessage) -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Outliers at Play · We build brands and products that are loved" />
+<meta property="og:title" content="Outliers at Play · Design at founder speed" />
 <meta property="og:description" content="A design studio for tech and D2C founders. Brands, websites and apps shipped at founder speed." />
-<meta property="og:image" content="https://outlierdesign-lab.github.io/agencywebsite/assets/meta/og-image.png" />
-<meta property="og:url" content="https://outlierdesign-lab.github.io/agencywebsite/" />
+<meta property="og:image" content="https://outliersatplay.com/assets/meta/og-image.png" />
+<meta property="og:url" content="https://outliersatplay.com/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Outliers at Play · We build brands and products that are loved" />
+<meta name="twitter:title" content="Outliers at Play · Design at founder speed" />
 <meta name="twitter:description" content="A design studio for tech and D2C founders. Brands, websites and apps shipped at founder speed." />
-<meta name="twitter:image" content="https://outlierdesign-lab.github.io/agencywebsite/assets/meta/og-image.png" />
+<meta name="twitter:image" content="https://outliersatplay.com/assets/meta/og-image.png" />
 
 <link rel="stylesheet" href="assets/styles.css" />
 <style>
@@ -152,13 +152,14 @@
   .work-card:hover .frame { border-color: var(--ink); }
   .work-card:hover .frame .ph { transform: scale(1.03); filter: grayscale(0); }
   .work-meta { display: block; margin-top: 16px; }
-  .meta-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .meta-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; row-gap: 10px; flex-wrap: wrap; }
   .work-meta .t { font-family: var(--mono); font-size: clamp(14px, 1.4vw, 17px); font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-underline-offset: 4px; text-decoration-thickness: 1px; }
   .work-card:hover .work-meta .t { text-decoration: underline; }
   .work-tags { display: flex; gap: 6px; flex-wrap: wrap; }
   .work-tags .tag { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line); padding: 4px 9px; white-space: nowrap; transition: color .25s, border-color .25s; }
   .work-card:hover .work-tags .tag { color: var(--ink); border-color: var(--ink); }
-  .work-meta .s { display: block; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 8px; }
+  /* description sits on its own row, hairline-separated from the title + tag chips */
+  .work-meta .s { display: block; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
   .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
   /* coming-soon variant — no hover, no click, small badge */
   .work-card.is-soon { cursor: default; }
@@ -218,7 +219,7 @@
     <div class="nav-links" data-spy>
       <a href="/" class="active" data-nav="home">Home</a>
       <a href="#work" data-nav="works">Works</a>
-      <a href="careers.html" data-nav="careers">Careers</a>
+      <a href="careers.html" data-nav="careers">Join us</a>
       <a href="contact-us.html" data-nav="contact">Contact</a>
     </div>
     <div class="nav-cta">
@@ -230,7 +231,7 @@
 <div class="mobile-menu">
   <a href="/" class="active">Home</a>
   <a href="#work">Works</a>
-  <a href="careers.html">Careers</a>
+  <a href="careers.html">Join us</a>
   <a href="contact-us.html">Contact</a>
 </div>
 
@@ -240,11 +241,11 @@
     <div class="hero-grid">
       <div class="hero-left">
         <div class="hero-top reveal">
-          <span class="eyebrow">In the vast sea of products</span>
+          <span class="eyebrow">Studio for founders</span>
         </div>
-        <h1 class="display reveal" data-d="1">We build brands and products that are loved.</h1>
+        <h1 class="display reveal" data-d="1">You get only one shot at launching right. We make sure you do.</h1>
         <div class="hero-actions reveal" data-d="2">
-          <a data-mail="hello|outliersatplay|com" class="btn btn-primary">Email us <span class="arrow">↗</span></a>
+          <a href="contact-us.html" class="btn btn-primary">Let's talk <span class="arrow">↗</span></a>
           <a href="#work" class="btn btn-ghost">See the work</a>
         </div>
       </div>
@@ -275,7 +276,6 @@
     <div class="wrap">
       <span class="manifesto-eyebrow">Manifesto</span>
       <p class="manifesto-text" data-manifesto-text>People decide in seconds. Before they read a word, before they click anything, they've already felt something. Great design controls what that feeling is.</p>
-      <span class="manifesto-attr" data-manifesto-attr>by Outliers at Play.</span>
     </div>
   </div>
 </section>
@@ -286,7 +286,7 @@
     <div class="about-grid">
       <div class="reveal"><span class="eyebrow">About Us</span></div>
       <div class="reveal" data-d="1">
-        <p class="about-stmt">We're a team that love working with driven founders and understand the importance of design and speed.</p>
+        <p class="about-stmt">We're a team that loves working with driven founders. Small, senior, and fast — we scope the work upfront and ship in tight weekly cycles, so you see real progress every Friday.</p>
         <div class="about-stats">
           <div class="stat">
             <div class="n">8<span class="accent">+</span></div>
@@ -314,11 +314,10 @@
   <div class="wrap">
     <div class="work-head">
       <div class="section-head reveal">
-        <span class="eyebrow">Selected Work</span>
-        <h2 class="h2">A few of our<br />most proud work.</h2>
-        <span class="work-soon-tag">Full case studies, coming soon</span>
+        <span class="eyebrow">Our work</span>
+        <h2 class="h2">Selected work.</h2>
       </div>
-      <a data-mail="hello|outliersatplay|com" class="btn btn-ghost reveal" data-d="1">Start yours <span class="arrow">↗</span></a>
+      <a href="contact-us.html" class="btn btn-ghost reveal" data-d="1">Let's talk <span class="arrow">↗</span></a>
     </div>
     <div class="work-grid" id="work-grid">
       <a href="work/agentcargo.html" class="work-card reveal">
@@ -334,7 +333,7 @@
           <div class="s">AI agents for shipping</div>
         </div>
       </a>
-      <a href="https://middlewarehq.com" target="_blank" rel="noopener noreferrer" class="work-card reveal" data-d="1">
+      <a href="work/middlewarehq.html" class="work-card reveal" data-d="1">
         <div class="frame">
           <div class="ph" data-label="" style="background:url('assets/images/middleware/middleware-hero.png?v=2') center/cover no-repeat, repeating-linear-gradient(135deg,#f0f0f0 0 9px,#f7f7f7 9px 18px)"></div>
         </div>
@@ -400,7 +399,7 @@
           <line x1="11" y1="16" x2="11" y2="19" stroke="currentColor" stroke-width="1.5"/>
         </svg>
         <h3 class="h3">UI/UX Design</h3>
-        <p>Apps and interfaces designed for the unit economics. Clarity, conversion and craft, built to ship; not to sit in Figma.</p>
+        <p>Apps and interfaces designed around the numbers that move your unit economics — activation, conversion, retention. Clarity and craft, built to ship; not to sit in Figma.</p>
       </div>
       <div class="svc reveal" data-d="1">
         <span class="num">02</span>
@@ -422,7 +421,7 @@
           <line x1="11" y1="2" x2="11" y2="20" stroke="currentColor" stroke-width="1.5"/>
         </svg>
         <h3 class="h3">Branding</h3>
-        <p>Identities that hold up under investor scrutiny and on a stitched label alike. Mark, system, voice, built to scale with you.</p>
+        <p>Identities that hold up under investor scrutiny and against competitors ten times your size. Mark, system, voice, built to scale with you.</p>
       </div>
       <div class="svc reveal">
         <span class="num">04</span>
@@ -443,7 +442,7 @@
           <circle cx="14" cy="14" r="5.25" stroke="currentColor" stroke-width="1.5"/>
         </svg>
         <h3 class="h3">Visual Design</h3>
-        <p>Illustration, imagery and craft that make the product feel like something. Not a clone of every other landing page.</p>
+        <p>Illustration, imagery and craft that make the product feel like a flagship. Not a clone of every other landing page.</p>
       </div>
       <div class="svc reveal" data-d="2">
         <span class="num">06</span>
@@ -471,20 +470,24 @@
       </div>
       <div class="faq-list reveal" data-d="1">
         <div class="faq-item" data-faq>
-          <button class="faq-q">How fast can you actually ship? <span class="ind"></span></button>
-          <div class="faq-a"><p>A first meaningful version lands in 7 to 14 days, with full brand or product work wrapping in 3 to 6 weeks. We move in tight weekly cycles, so you're seeing real progress every Friday. Never a six-week black box.</p></div>
+          <button class="faq-q">Why hire us instead of building a team? <span class="ind"></span></button>
+          <div class="faq-a"><p>Building your dream team takes months of hiring, onboarding, and trial runs — time you don't have before launch. We're already a team that ships. You skip straight to the work.</p></div>
         </div>
         <div class="faq-item" data-faq>
-          <button class="faq-q">Doesn't moving this fast hurt the quality? <span class="ind"></span></button>
-          <div class="faq-a"><p>The opposite, in our experience. Speed forces clarity. Fewer rounds of second-guessing, fewer committees, more decisions that hold up. We've shipped this way for eight years; the bar gets higher, not lower.</p></div>
+          <button class="faq-q">How long does a project take? <span class="ind"></span></button>
+          <div class="faq-a"><p>15–21 days for most branding and website projects. We scope it upfront so you know the date before we start.</p></div>
         </div>
         <div class="faq-item" data-faq>
-          <button class="faq-q">What does "quality" actually look like here? <span class="ind"></span></button>
-          <div class="faq-a"><p>Work that survives investor scrutiny, looks right on a real device and still feels considered six months later. Every pixel, word and interaction has a reason. Nothing on the page because it was easy to add.</p></div>
+          <button class="faq-q">What kind of companies do you work with? <span class="ind"></span></button>
+          <div class="faq-a"><p>Different niches, on purpose. Working across industries means we bring ideas from outside yours — that cross-pollination is usually what makes a brand stand out instead of blending in.</p></div>
         </div>
         <div class="faq-item" data-faq>
-          <button class="faq-q">How do you keep the bar high under pressure? <span class="ind"></span></button>
-          <div class="faq-a"><p>Small, senior team. No juniors learning on your runway, no handoffs to a third agency. The people you meet on day one are the ones designing, deciding and shipping, which is why the quality doesn't drop when the deadline does.</p></div>
+          <button class="faq-q">Do you offer revisions? <span class="ind"></span></button>
+          <div class="faq-a"><p>We rarely need many, but yes. We like our clients happy more than we like being right.</p></div>
+        </div>
+        <div class="faq-item" data-faq>
+          <button class="faq-q">When can we start? <span class="ind"></span></button>
+          <div class="faq-a"><p>If we have slots open this fortnight — yesterday.</p></div>
         </div>
       </div>
     </div>
@@ -496,8 +499,8 @@
   <div class="wrap">
     <div class="cta-card reveal">
       <span class="eyebrow" style="justify-content:center;">Building something?</span>
-      <h2 class="h2 cta-headline">You get only one shot at launching right.<br />We make sure you do.</h2>
-      <a data-mail="hello|outliersatplay|com" data-mail-show class="cta-mail">hello [at] outliersatplay [dot] com</a>
+      <h2 class="h2 cta-headline">You only launch once.<br />Let's make it count.</h2>
+      <a href="contact-us.html" class="cta-mail">Let's talk <span class="arrow">↗</span></a>
     </div>
   </div>
 </section>
@@ -514,12 +517,12 @@
         <h4>Navigate</h4>
         <a href="/">Home</a>
         <a href="#work">Works</a>
-        <a href="careers.html">Careers</a>
+        <a href="careers.html">Join us</a>
         <a href="contact-us.html">Contact</a>
       </div>
       <div class="foot-col">
         <h4>Get in touch</h4>
-        <a data-mail="hello|outliersatplay|com" data-mail-show>hello [at] outliersatplay [dot] com</a>
+        <a href="contact-us.html">Let's talk</a>
       </div>
     </div>
     <div class="foot-bottom">
