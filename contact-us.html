@@ -104,7 +104,17 @@
             <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
             <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@company.com" required /></div>
           </div>
-          <div class="field"><label for="msg">What are you building?</label><textarea id="msg" name="message" placeholder="Tell us what you're building, when you need to launch, and where design's getting in the way…" required></textarea></div>
+          <div class="field">
+            <label>What do you need? <span style="color:var(--faint);text-transform:none;letter-spacing:0;font-size:11px;">(tap any)</span></label>
+            <div class="chips" id="serviceChips">
+              <span class="chip" data-service="Website">Website</span>
+              <span class="chip" data-service="Brand Identity">Brand Identity</span>
+              <span class="chip" data-service="Visual Design">Visual Design</span>
+              <span class="chip" data-service="Marketing">Marketing</span>
+            </div>
+          </div>
+          <div class="field"><label for="msg">Your message</label><textarea id="msg" name="message" required>I want these services for my brand.</textarea></div>
+          <input type="hidden" id="services" name="services" />
           <button type="submit" class="btn btn-primary form-submit">Send message <span class="arrow">↗</span></button>
           <p class="form-note" id="formError" style="display:none;color:var(--ink);">Something went wrong. Please try again in a moment.</p>
         </form>
@@ -153,6 +163,11 @@
   const sent = document.getElementById('sent');
   const errNote = document.getElementById('formError');
   const submitBtn = form?.querySelector('button[type=submit]');
+  const chips = Array.from(document.querySelectorAll('#serviceChips .chip'));
+  const servicesField = document.getElementById('services');
+
+  // tap-to-toggle service chips
+  chips.forEach(c => c.addEventListener('click', () => c.classList.toggle('on')));
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -165,6 +180,10 @@
       form.querySelector(!name ? '#name' : !email ? '#email' : '#msg').focus();
       return;
     }
+
+    // fold selected services into the submission
+    servicesField.value = chips.filter(c => c.classList.contains('on'))
+      .map(c => c.dataset.service).join(', ');
 
     submitBtn.disabled = true;
     const original = submitBtn.innerHTML;

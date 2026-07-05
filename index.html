@@ -30,6 +30,7 @@
   .hero-top { display: flex; flex-direction: column; gap: 14px; margin-bottom: clamp(28px, 4.5vw, 52px); }
   .hero-note { max-width: 340px; color: var(--ink-soft); font-size: 12px; line-height: 1.7; }
   .hero h1 { max-width: 17ch; font-size: clamp(28px, 4.5vw, 48px); text-transform: uppercase; }
+  .hero h1 .hl { background: var(--ink); color: var(--paper); padding: 0 0.14em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
   .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: clamp(34px, 5vw, 56px); flex-wrap: wrap; }
   .hero-right { margin-top: clamp(-190px, -12vw, -120px); }
   .hero-image { width: 100%; aspect-ratio: 4 / 5; border: none; background: var(--paper); background-size: cover; background-position: center; background-repeat: no-repeat; }
@@ -158,8 +159,7 @@
   .work-tags { display: flex; gap: 6px; flex-wrap: wrap; }
   .work-tags .tag { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--line); padding: 4px 9px; white-space: nowrap; transition: color .25s, border-color .25s; }
   .work-card:hover .work-tags .tag { color: var(--ink); border-color: var(--ink); }
-  /* description sits on its own row, hairline-separated from the title + tag chips */
-  .work-meta .s { display: block; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .work-meta .s { display: block; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; margin-top: 10px; }
   .work-meta .fund { color: var(--ink); font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
   /* coming-soon variant — no hover, no click, small badge */
   .work-card.is-soon { cursor: default; }
@@ -243,7 +243,7 @@
         <div class="hero-top reveal">
           <span class="eyebrow">Studio for founders</span>
         </div>
-        <h1 class="display reveal" data-d="1">You get only one shot at launching right. We make sure you do.</h1>
+        <h1 class="display reveal" data-d="1">You get only one shot at launching right. <span class="hl">We make sure you do.</span></h1>
         <div class="hero-actions reveal" data-d="2">
           <a href="contact-us.html" class="btn btn-primary">Let's talk <span class="arrow">↗</span></a>
           <a href="#work" class="btn btn-ghost">See the work</a>
@@ -287,20 +287,6 @@
       <div class="reveal"><span class="eyebrow">About Us</span></div>
       <div class="reveal" data-d="1">
         <p class="about-stmt">We're a team that loves working with driven founders. Small, senior, and fast — we scope the work upfront and ship in tight weekly cycles, so you see real progress every Friday.</p>
-        <div class="about-stats">
-          <div class="stat">
-            <div class="n">8<span class="accent">+</span></div>
-            <div class="l">years shipping for founders</div>
-          </div>
-          <div class="stat">
-            <div class="n">$70M<span class="accent">+</span></div>
-            <div class="l">raised by companies we've shaped</div>
-          </div>
-          <div class="stat">
-            <div class="n">30<span class="accent">+</span></div>
-            <div class="l">companies worked with</div>
-          </div>
-        </div>
         <div class="about-more">
           <a href="contact-us.html" class="btn btn-ghost">Work with us <span class="arrow">↗</span></a>
         </div>
