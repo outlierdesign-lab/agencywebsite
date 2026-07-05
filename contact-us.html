@@ -97,16 +97,18 @@
 <section class="ct-wrap">
   <div class="wrap">
     <div class="ct-grid">
-      <form class="form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <div class="form-col reveal">
         <div class="sent" id="sent">✓ Thank you! We'll be in touch in the next 6 hours.</div>
-        <div class="field-row">
-          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@company.com" required /></div>
-        </div>
-        <div class="field"><label for="msg">What are you building?</label><textarea id="msg" name="message" placeholder="Tell us what you're building, when you need to launch, and where design's getting in the way…" required></textarea></div>
-        <button type="submit" class="btn btn-primary form-submit">Send message <span class="arrow">↗</span></button>
-        <p class="form-note" id="formError" style="display:none;color:var(--ink);">Something went wrong. Please try again in a moment.</p>
-      </form>
+        <form class="form" id="contactForm" action="https://formspree.io/f/meebnkgo" method="POST" novalidate>
+          <div class="field-row">
+            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@company.com" required /></div>
+          </div>
+          <div class="field"><label for="msg">What are you building?</label><textarea id="msg" name="message" placeholder="Tell us what you're building, when you need to launch, and where design's getting in the way…" required></textarea></div>
+          <button type="submit" class="btn btn-primary form-submit">Send message <span class="arrow">↗</span></button>
+          <p class="form-note" id="formError" style="display:none;color:var(--ink);">Something went wrong. Please try again in a moment.</p>
+        </form>
+      </div>
 
       <aside class="ct-info reveal" data-d="1">
         <div class="ct-card">
@@ -146,8 +148,7 @@
 <script src="assets/app.js"></script>
 <script>
   // Contact form → Formspree (actually sends; does not open a mail client).
-  // SETUP: create a Formspree form that delivers to the studio inbox, then
-  // replace YOUR_FORM_ID in the form's action attribute with the form id.
+  // Delivers to the studio inbox via the form id in the action attribute.
   const form = document.getElementById('contactForm');
   const sent = document.getElementById('sent');
   const errNote = document.getElementById('formError');
