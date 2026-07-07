@@ -226,6 +226,8 @@ h1, h2, h3, h4 { font-family: var(--pixel); font-weight: 600; line-height: 1.06;
 
 /* ---------- footer (black band) ---------- */
 .footer { background: var(--night); color: var(--night-soft); padding-top: clamp(56px, 9vw, 110px); padding-bottom: 40px; margin-top: clamp(70px, 11vw, 150px); }
+/* no gap when the footer directly follows the dark CTA band */
+.cta + .footer { margin-top: 0; }
 .footer .brand { color: var(--night-ink); }
 .footer .brand .dot { background: var(--night-ink); }
 .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: clamp(30px,5vw,60px); }
